@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedRabbitMq", "SharedRabbitMq.csproj", "{78A275C6-4A82-433D-BBF8-3981B9FC2AEE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedDatabase", "..\SharedDatabase\SharedDatabase.csproj", "{B0955BCA-4958-4DE0-9336-05FEB109382F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{78A275C6-4A82-433D-BBF8-3981B9FC2AEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78A275C6-4A82-433D-BBF8-3981B9FC2AEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78A275C6-4A82-433D-BBF8-3981B9FC2AEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78A275C6-4A82-433D-BBF8-3981B9FC2AEE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0955BCA-4958-4DE0-9336-05FEB109382F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0955BCA-4958-4DE0-9336-05FEB109382F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0955BCA-4958-4DE0-9336-05FEB109382F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0955BCA-4958-4DE0-9336-05FEB109382F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {80531F25-2B1E-453C-9F76-428BCD952E3B}
+	EndGlobalSection
+EndGlobal

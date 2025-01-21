@@ -1,0 +1,156 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\SolutionAll\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D2F587-46BD-4E02-B006-AD5C09E2E503}|..\\backend\\ApiOcelot\\ApiOcelot.csproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\backend\\apiocelot\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}|..\\backend\\ApiStock\\ApiStock.csproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\backend\\apistock\\controller\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}|..\\backend\\ApiStock\\ApiStock.csproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\backend\\apistock\\domain\\repository\\productrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}|..\\backend\\ApiStock\\ApiStock.csproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\backend\\apistock\\controller\\stockcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1054FD24-6B29-4EAF-9865-0EA8111A04D5}|..\\backend\\ApiSale\\ApiSale.csproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\backend\\apisale\\controller\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D2F587-46BD-4E02-B006-AD5C09E2E503}|..\\backend\\ApiOcelot\\ApiOcelot.csproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\backend\\apiocelot\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D2F587-46BD-4E02-B006-AD5C09E2E503}|..\\backend\\ApiOcelot\\ApiOcelot.csproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\backend\\apiocelot\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\Program.cs",
+              "RelativeDocumentMoniker": "..\\backend\\ApiOcelot\\Program.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\Program.cs",
+              "RelativeToolTip": "..\\backend\\ApiOcelot\\Program.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACQAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T22:34:53.303Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ocelot.json",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.json",
+              "RelativeDocumentMoniker": "..\\backend\\ApiOcelot\\ocelot.json",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.json",
+              "RelativeToolTip": "..\\backend\\ApiOcelot\\ocelot.json",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAADEAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-20T22:35:39.511Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SaleController.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Controller\\SaleController.cs",
+              "RelativeDocumentMoniker": "..\\backend\\ApiSale\\Controller\\SaleController.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Controller\\SaleController.cs",
+              "RelativeToolTip": "..\\backend\\ApiSale\\Controller\\SaleController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T22:56:31.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StockController.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Controller\\StockController.cs",
+              "RelativeDocumentMoniker": "..\\backend\\ApiStock\\Controller\\StockController.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Controller\\StockController.cs",
+              "RelativeToolTip": "..\\backend\\ApiStock\\Controller\\StockController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T22:56:23.73Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "..\\backend\\ApiOcelot\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\Properties\\launchSettings.json",
+              "RelativeToolTip": "..\\backend\\ApiOcelot\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABoAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-20T22:51:24.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Controller\\ProductController.cs",
+              "RelativeDocumentMoniker": "..\\backend\\ApiStock\\Controller\\ProductController.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Controller\\ProductController.cs",
+              "RelativeToolTip": "..\\backend\\ApiStock\\Controller\\ProductController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwBQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T22:14:48.566Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductRepository.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Domain\\Repository\\ProductRepository.cs",
+              "RelativeDocumentMoniker": "..\\backend\\ApiStock\\Domain\\Repository\\ProductRepository.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Domain\\Repository\\ProductRepository.cs",
+              "RelativeToolTip": "..\\backend\\ApiStock\\Domain\\Repository\\ProductRepository.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAYwBAAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-20T22:14:48.595Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

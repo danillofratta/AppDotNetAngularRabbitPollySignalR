@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiOrder", "..\backend\ApiOrder\ApiOrder.csproj", "{263DAF44-8FB6-4CD0-B979-052E94B91C3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiSale", "..\backend\ApiSale\ApiSale.csproj", "{1054FD24-6B29-4EAF-9865-0EA8111A04D5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiStock", "..\backend\ApiStock\ApiStock.csproj", "{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedDatabase", "..\backend\SharedDatabase\SharedDatabase.csproj", "{419240A3-4F6E-4ADF-B974-6A5E8015C086}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedRabbitMq", "..\backend\SharedRabbitMq\SharedRabbitMq.csproj", "{A66DF452-1261-42EC-AC2F-55EE55BF24BA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiOcelot", "..\backend\ApiOcelot\ApiOcelot.csproj", "{D0D2F587-46BD-4E02-B006-AD5C09E2E503}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{263DAF44-8FB6-4CD0-B979-052E94B91C3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{263DAF44-8FB6-4CD0-B979-052E94B91C3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{263DAF44-8FB6-4CD0-B979-052E94B91C3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{263DAF44-8FB6-4CD0-B979-052E94B91C3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1054FD24-6B29-4EAF-9865-0EA8111A04D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1054FD24-6B29-4EAF-9865-0EA8111A04D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1054FD24-6B29-4EAF-9865-0EA8111A04D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1054FD24-6B29-4EAF-9865-0EA8111A04D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{419240A3-4F6E-4ADF-B974-6A5E8015C086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{419240A3-4F6E-4ADF-B974-6A5E8015C086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{419240A3-4F6E-4ADF-B974-6A5E8015C086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{419240A3-4F6E-4ADF-B974-6A5E8015C086}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A66DF452-1261-42EC-AC2F-55EE55BF24BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A66DF452-1261-42EC-AC2F-55EE55BF24BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A66DF452-1261-42EC-AC2F-55EE55BF24BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A66DF452-1261-42EC-AC2F-55EE55BF24BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0D2F587-46BD-4E02-B006-AD5C09E2E503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0D2F587-46BD-4E02-B006-AD5C09E2E503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0D2F587-46BD-4E02-B006-AD5C09E2E503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0D2F587-46BD-4E02-B006-AD5C09E2E503}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41544498-9BBE-4272-8126-D86BF74311D5}
+	EndGlobalSection
+EndGlobal

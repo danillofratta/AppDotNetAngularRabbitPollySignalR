@@ -1,0 +1,6 @@
+@ApiOcelot_HostAddress = http://localhost:5164
+
+GET {{ApiOcelot_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

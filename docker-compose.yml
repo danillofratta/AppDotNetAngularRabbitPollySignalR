@@ -1,0 +1,68 @@
+version: '3.8'
+services:
+  frontend:
+    build: ./frontend
+    ports:
+      - "4200:4200"
+    networks:
+      - app-network
+
+  api-order:
+    build: ./api-order
+    ports:
+      - "5001:80"
+    networks:
+      - app-network
+    depends_on:
+      - rabbitmq
+      - db
+
+  api-sale:
+    build: ./api-sale
+    ports:
+      - "5002:80"
+    networks:
+      - app-network
+    depends_on:
+      - rabbitmq
+      - db
+
+  api-stock:
+    build: ./api-stock
+    ports:
+      - "5003:80"
+    networks:
+      - app-network
+    depends_on:
+      - rabbitmq
+      - db
+
+  rabbitmq:
+    image: "rabbitmq:management"
+    ports:
+      - "15672:15672"
+      - "5672:5672"
+    networks:
+      - app-network
+
+  db:    
+    image: "mysql:8.0"  # Usando a imagem correta do MySQL
+    environment:
+        - MYSQL_ROOT_PASSWORD=admin  # Senha do usuário root
+        - MYSQL_DATABASE=my_database  # Nome do banco de dados inicial
+        - MYSQL_USER=root  # Usuário adicional
+        - MYSQL_PASSWORD=admin  # Senha do usuário adicional
+    ports:
+        - "3306:3306"  # Expondo a porta 3306 (padrão do MySQL)
+    networks:
+        - app-network
+    volumes:
+        - mysql-data:/var/lib/mysql  # Persistir dados do MySQL
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  mysql-data:
+    driver: local

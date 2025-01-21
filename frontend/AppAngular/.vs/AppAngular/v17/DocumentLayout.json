@@ -1,0 +1,99 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\domain\\api\\saleapi.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\domain\\api\\saleapi.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\sale\\sale.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\sale\\sale.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\sale\\sale.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\sale\\sale.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "sale.component.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\sale\\sale.component.ts",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\sale\\sale.component.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\sale\\sale.component.ts",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\sale\\sale.component.ts",
+              "ViewState": "AQIAAE0AAAAAAAAAAAAowGAAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-17T23:59:47.599Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "sale.component.html",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\sale\\sale.component.html",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\sale\\sale.component.html",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\sale\\sale.component.html",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\sale\\sale.component.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-18T00:09:17.194Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{57d563b6-44a5-47df-85be-f4199ad6b651}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SaleApi.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\domain\\api\\SaleApi.ts",
+              "RelativeDocumentMoniker": "src\\domain\\api\\SaleApi.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\domain\\api\\SaleApi.ts",
+              "RelativeToolTip": "src\\domain\\api\\SaleApi.ts",
+              "ViewState": "AQIAAAYAAAAAAAAAAADgvxEAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-18T00:15:15.149Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

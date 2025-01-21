@@ -1,0 +1,63 @@
+<h1 id="tableLabel">Order</h1>
+
+<app-loading-spinner [isLoading]="isLoading" [message]="'Loading'"></app-loading-spinner>
+
+<form [formGroup]="form" *ngIf="!busy">
+  <mat-form-field>
+    <mat-label>Amount</mat-label>
+    <input matInput formControlName="amount" type="number" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="save()">Save</button>
+</form>
+
+  <div *ngIf="!isLoading">
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z6">
+
+      <!-- Actions Column -->
+      <!--<ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button color="red" (click)="onDelete(element.idperson)">
+            <mat-icon>delete</mat-icon> Cancel
+          </button>
+        </td>
+      </ng-container>-->
+
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="idproduct">
+        <th mat-header-cell *matHeaderCellDef> idproduct </th>
+        <td mat-cell *matCellDef="let element"> {{element.idproduct}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="value">
+        <th mat-header-cell *matHeaderCellDef> value </th>
+        <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="nameproduct">
+        <th mat-header-cell *matHeaderCellDef> nameproduct </th>
+        <td mat-cell *matCellDef="let element"> {{element.nameproduct}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="namestatus">
+        <th mat-header-cell *matHeaderCellDef> namestatus </th>
+        <td mat-cell *matCellDef="let element"> {{element.namestatus}} </td>
+      </ng-container>
+
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 50, 100]"
+                   [pageSize]="10"
+                   showFirstLastButtons
+                   aria-label="Select page">
+    </mat-paginator>
+  </div>
