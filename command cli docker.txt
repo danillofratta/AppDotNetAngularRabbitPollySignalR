@@ -1,0 +1,26 @@
+**Docker rabbit para dev com VS
+docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:4.0-management
+
+**Docker rabbit para dev com VS
+docker run -d -p 6379:6379 redis
+
+**Docker Project alterar conexão no do rabbit e regis
+
+#primeiro criar as imagens
+docker build -t app-angular .
+
+docker build -t api_stock -f ApiStock/Dockerfile .
+docker build -t api_order -f ApiOrder/Dockerfile .
+docker build -t api_sale -f ApiSale/Dockerfile .
+docker build -t api_gateway -f ApiOcelot/Dockerfile .
+
+#depois gerar o build de tudo
+docker-compose up --build
+
+
+**Docker limpa cache
+docker-compose down --rmi all
+
+**angular
+npm install @microsoft/signalr
+

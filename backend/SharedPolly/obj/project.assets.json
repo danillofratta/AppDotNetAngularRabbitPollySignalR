@@ -3762,11 +3762,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj",
+      "projectUniqueName": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj",
       "projectName": "SharedPolly",
-      "projectPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj",
+      "projectPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj",
       "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
-      "outputPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\obj\\",
+      "outputPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",

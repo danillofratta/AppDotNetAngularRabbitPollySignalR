@@ -26,6 +26,8 @@ builder.Services.AddTransient<ProductRepository>();
 
 //redis todo get from appsettings
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379")); // Redis server
+//quando usado docker
+//builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("redis:6379")); // Redis server
 builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();
 
 builder.Services.AddEndpointsApiExplorer();

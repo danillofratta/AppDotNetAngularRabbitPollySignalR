@@ -9,8 +9,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedRabbitMq", "..\Shared
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedDatabase", "..\SharedDatabase\SharedDatabase.csproj", "{E6659EA4-0185-46BD-B70A-E11C3D65439D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SharedPolly", "..\SharedPolly\SharedPolly.csproj", "{EFAA80E4-1736-4C63-9D57-5F834F271249}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,10 +27,6 @@ Global
 		{E6659EA4-0185-46BD-B70A-E11C3D65439D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6659EA4-0185-46BD-B70A-E11C3D65439D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6659EA4-0185-46BD-B70A-E11C3D65439D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EFAA80E4-1736-4C63-9D57-5F834F271249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EFAA80E4-1736-4C63-9D57-5F834F271249}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EFAA80E4-1736-4C63-9D57-5F834F271249}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EFAA80E4-1736-4C63-9D57-5F834F271249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

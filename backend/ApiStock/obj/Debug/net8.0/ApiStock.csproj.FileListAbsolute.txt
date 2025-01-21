@@ -133,3 +133,6 @@ C:\1 Arquivos\TI\0 - Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj
 C:\1 Arquivos\TI\0 - Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ref\ApiStock.dll
 C:\1 Arquivos\TI\0 - Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\bin\Debug\net8.0\MediatR.dll
 C:\1 Arquivos\TI\0 - Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ApiStock.dll
+C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\refint\ApiStock.dll
+C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ApiStock.pdb

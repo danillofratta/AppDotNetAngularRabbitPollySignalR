@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "SWRylpbX4BE/BqRcntwlQJVF0QEnuUQz8WpJZB6XThn7l/epd1Xpxu2zw7aC6IkHNl0EvsFznFyky3XEcmtvng==",
+  "dgSpecHash": "o3KcwlXj0y/uY/Wazgs+yDhV+JnkeSEAPLIUNxy/mBqLxd872JKZ/ffh0E6eAKrz/WXhn109k0eXUVd/d4kpDg==",
   "success": true,
-  "projectFilePath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj",
+  "projectFilePath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.entityframeworkcore\\8.0.1\\microsoft.entityframeworkcore.8.0.1.nupkg.sha512",
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\8.0.1\\microsoft.entityframeworkcore.abstractions.8.0.1.nupkg.sha512",

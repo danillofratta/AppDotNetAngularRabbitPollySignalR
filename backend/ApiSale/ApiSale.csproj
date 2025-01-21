@@ -16,7 +16,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\SharedDatabase\SharedDatabase.csproj" />
-    <ProjectReference Include="..\SharedPolly\SharedPolly.csproj" />
     <ProjectReference Include="..\SharedRabbitMq\SharedRabbitMq.csproj" />
   </ItemGroup>
 

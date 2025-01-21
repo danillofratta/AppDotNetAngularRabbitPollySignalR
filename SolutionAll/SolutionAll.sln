@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SharedRabbitMq", "..\backen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiOcelot", "..\backend\ApiOcelot\ApiOcelot.csproj", "{D0D2F587-46BD-4E02-B006-AD5C09E2E503}"
 EndProject
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "AppAngular", "..\frontend\AppAngular\AppAngular.esproj", "{EDE50743-4C78-42C2-912A-930AB04380A9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,12 @@ Global
 		{D0D2F587-46BD-4E02-B006-AD5C09E2E503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0D2F587-46BD-4E02-B006-AD5C09E2E503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0D2F587-46BD-4E02-B006-AD5C09E2E503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE50743-4C78-42C2-912A-930AB04380A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDE50743-4C78-42C2-912A-930AB04380A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDE50743-4C78-42C2-912A-930AB04380A9}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{EDE50743-4C78-42C2-912A-930AB04380A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDE50743-4C78-42C2-912A-930AB04380A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDE50743-4C78-42C2-912A-930AB04380A9}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

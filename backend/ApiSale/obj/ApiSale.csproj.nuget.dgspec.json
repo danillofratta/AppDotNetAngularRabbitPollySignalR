@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\ApiSale.csproj": {}
+    "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\ApiSale.csproj": {}
   },
   "projects": {
-    "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\ApiSale.csproj": {
+    "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\ApiSale.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\ApiSale.csproj",
+        "projectUniqueName": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\ApiSale.csproj",
         "projectName": "ApiSale",
-        "projectPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\ApiSale.csproj",
+        "projectPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\ApiSale.csproj",
         "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
-        "outputPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\obj\\",
+        "outputPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",
@@ -36,14 +36,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj": {
-                "projectPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj"
+              "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj": {
+                "projectPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj"
               },
-              "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj": {
-                "projectPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj"
-              },
-              "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj": {
-                "projectPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj"
+              "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj": {
+                "projectPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj"
               }
             }
           }
@@ -107,14 +104,14 @@
         }
       }
     },
-    "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj": {
+    "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj",
+        "projectUniqueName": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj",
         "projectName": "SharedDatabase",
-        "projectPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj",
+        "projectPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\SharedDatabase.csproj",
         "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
-        "outputPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\obj\\",
+        "outputPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",
@@ -189,100 +186,14 @@
         }
       }
     },
-    "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj": {
+    "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj",
-        "projectName": "SharedPolly",
-        "projectPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj",
-        "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
-        "outputPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\obj\\",
-        "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
-        "configFilePaths": [
-          "C:\\Users\\danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 23.2.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
-        ],
-        "originalTargetFrameworks": [
-          "net8.0"
-        ],
-        "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 23.2\\Components\\System\\Components\\Packages": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
-            "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
-        }
-      },
-      "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "dependencies": {
-            "Microsoft.Extensions.DependencyInjection.Abstractions": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Microsoft.Extensions.Http.Polly": {
-              "target": "Package",
-              "version": "[8.0.0, )"
-            },
-            "Polly": {
-              "target": "Package",
-              "version": "[8.5.1, )"
-            },
-            "System.Net.Http": {
-              "target": "Package",
-              "version": "[4.3.4, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
+        "projectUniqueName": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
         "projectName": "SharedRabbitMq",
-        "projectPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
+        "projectPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
         "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
-        "outputPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\obj\\",
+        "outputPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",

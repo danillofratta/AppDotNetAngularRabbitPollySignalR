@@ -15,6 +15,7 @@ namespace SharedRabbitMq.Service
         protected const string VirtualHost = "CUSTOM_HOST";
         protected readonly string LoggerExchange = $"{VirtualHost}.LoggerExchange";
 
+        //_hostname = "rabbitmq" quando utilizado docker
         public string _hostname = "localhost";  // Nome do host do RabbitMQ
         //todo pass nome da fila
         public string _queueName = ""; // Nome da fila

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Lnn1E3sX4UfVFCorlshHWPvoyw6A0i6tqW8Ymy3esMHlHJ/loxLSGrO1XGRIWTP3Gfw8/FRYmPWUezKOqXHL0w==",
+  "dgSpecHash": "no44FOoMqo2M84yE270Pyod5kMY1ah1oxd2Yg9qyirVgBxfJTJTLEHZCIFV+vwf1XDXhqsmvF55U3HINP0eHeQ==",
   "success": true,
-  "projectFilePath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj",
+  "projectFilePath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedPolly\\SharedPolly.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",

@@ -4,6 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>32e44484-5501-4e76-b8c8-e98cd985451f</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>.</DockerfileContext>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +14,7 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.10" />
     <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="9.0.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
     <PackageReference Include="Polly" Version="8.5.1" />
     <PackageReference Include="RabbitMQ.Client" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />

@@ -1,0 +1,44 @@
+services:
+  gateway:
+    build:
+      context: ./backend/ApiOcelot
+      dockerfile: Dockerfile
+    image: gateway  
+    ports:
+      - "5000:80" # Porta exposta
+    depends_on:
+      - api_order
+      - api_sale
+      - api_stock      
+
+  api_order:
+    build:
+      context: ./backend/ApiOrder
+      dockerfile: Dockerfile
+    image: api_order    
+    ports:
+      - "5001:80"
+
+  api_sale:
+    build:
+      context: ./backend/ApiSale      
+      dockerfile: Dockerfile
+    image: api_sale    
+    ports:
+      - "5002:80"
+
+  api_stock:
+    build:
+      context: ./backend/ApiStock
+      dockerfile: Dockerfile
+    image: api_stock    
+    ports:
+      - "5003:80"
+
+  app_angular:
+    build:
+      context: ./frontend/AppAngular
+      dockerfile: Dockerfile
+    image: app_angular  
+    ports:
+      - "4200:80"

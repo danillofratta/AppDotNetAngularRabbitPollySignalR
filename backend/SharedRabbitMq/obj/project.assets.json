@@ -799,11 +799,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
+      "projectUniqueName": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
       "projectName": "SharedRabbitMq",
-      "projectPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
+      "projectPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
       "packagesPath": "C:\\Users\\danil\\.nuget\\packages\\",
-      "outputPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\obj\\",
+      "outputPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\DevExpress 23.2\\Components\\Offline Packages",

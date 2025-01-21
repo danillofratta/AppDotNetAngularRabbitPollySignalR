@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3QCCYOyapgclThRo56oGLIE2Ag4az0ofd6kPFMJKv1oj7z+TWr3tEMumjRV9JMay/acIPL9O2RcJMY019RjaBQ==",
+  "dgSpecHash": "32oVKPbUePdIqvSiI6Ct+JbdRW0VlHLK3lb+tO9h5trCbVYt7FytzAnL77NhLtN4hcSBEGYQxefASgJ77mnU7Q==",
   "success": true,
-  "projectFilePath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
+  "projectFilePath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\9.0.1\\microsoft.extensions.configuration.abstractions.9.0.1.nupkg.sha512",
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\9.0.1\\microsoft.extensions.dependencyinjection.abstractions.9.0.1.nupkg.sha512",

@@ -1,68 +1,59 @@
-version: '3.8'
 services:
-  frontend:
-    build: ./frontend
+  redis:
+    image: redis:latest
+    container_name: redis
     ports:
-      - "4200:4200"
-    networks:
-      - app-network
-
-  api-order:
-    build: ./api-order
-    ports:
-      - "5001:80"
-    networks:
-      - app-network
-    depends_on:
-      - rabbitmq
-      - db
-
-  api-sale:
-    build: ./api-sale
-    ports:
-      - "5002:80"
-    networks:
-      - app-network
-    depends_on:
-      - rabbitmq
-      - db
-
-  api-stock:
-    build: ./api-stock
-    ports:
-      - "5003:80"
-    networks:
-      - app-network
-    depends_on:
-      - rabbitmq
-      - db
+      - "6380:6379" # Redis exposto na porta 6380
 
   rabbitmq:
-    image: "rabbitmq:management"
+    image: rabbitmq:4-management
+    container_name: rabbitmq
     ports:
-      - "15672:15672"
-      - "5672:5672"
-    networks:
-      - app-network
-
-  db:    
-    image: "mysql:8.0"  # Usando a imagem correta do MySQL
+      - "5672:5672"   # Porta de comunica√ß√£o do RabbitMQ (AMQP)
+      - "15672:15672" # Painel de administra√ß√£o do RabbitMQ
     environment:
-        - MYSQL_ROOT_PASSWORD=admin  # Senha do usu·rio root
-        - MYSQL_DATABASE=my_database  # Nome do banco de dados inicial
-        - MYSQL_USER=root  # Usu·rio adicional
-        - MYSQL_PASSWORD=admin  # Senha do usu·rio adicional
+      RABBITMQ_DEFAULT_USER: guest # Usu√°rio padr√£o
+      RABBITMQ_DEFAULT_PASS: guest # Senha padr√£o 
+
+  api_order:
+    image: api_order    
     ports:
-        - "3306:3306"  # Expondo a porta 3306 (padr„o do MySQL)
-    networks:
-        - app-network
-    volumes:
-        - mysql-data:/var/lib/mysql  # Persistir dados do MySQL
+      - "5001:80"
+    environment:
+      - RABBITMQ_CONNECTION=rabbitmq:5672
+    depends_on:
+      - rabbitmq
 
-networks:
-  app-network:
-    driver: bridge
+  api_sale:
+    image: api_sale    
+    ports:
+      - "5002:80"  
+    environment:
+      - RABBITMQ_CONNECTION=rabbitmq:5672
+    depends_on:
+      - rabbitmq      
 
-volumes:
-  mysql-data:
-    driver: local
+  api_stock:
+    image: api_stock    
+    ports:
+      - "5003:80"
+    environment:
+      - REDIS_CONNECTION=redis:6379
+      - RABBITMQ_CONNECTION=rabbitmq:5672
+    depends_on:
+      - redis    
+      - rabbitmq        
+
+  app_angular:
+    image: app-angular  
+    ports:
+      - "4200:80"
+
+  gateway:
+    image: api_gateway  
+    ports:
+      - "4000:80" # Porta exposta
+    depends_on:
+      - api_order
+      - api_sale
+      - api_stock   
