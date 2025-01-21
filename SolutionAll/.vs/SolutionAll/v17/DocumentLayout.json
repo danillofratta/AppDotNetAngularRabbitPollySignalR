@@ -1,7 +1,20 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\SolutionAll\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\SolutionAll\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D0D2F587-46BD-4E02-B006-AD5C09E2E503}|..\\backend\\ApiOcelot\\ApiOcelot.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiocelot\\ocelot.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A66DF452-1261-42EC-AC2F-55EE55BF24BA}|..\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\sharedrabbitmq\\service\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{263DAF44-8FB6-4CD0-B979-052E94B91C3F}|..\\backend\\ApiOrder\\ApiOrder.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiorder\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{263DAF44-8FB6-4CD0-B979-052E94B91C3F}|..\\backend\\ApiOrder\\ApiOrder.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiorder\\controller\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -38,6 +51,58 @@
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ocelot.json",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.json",
+              "RelativeDocumentMoniker": "..\\backend\\ApiOcelot\\ocelot.json",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.json",
+              "RelativeToolTip": "..\\backend\\ApiOcelot\\ocelot.json",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-21T18:54:42.836Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RabbitMqService.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
+              "RelativeDocumentMoniker": "..\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
+              "RelativeToolTip": "..\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T18:53:51.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Program.cs",
+              "RelativeDocumentMoniker": "..\\backend\\ApiOrder\\Program.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Program.cs",
+              "RelativeToolTip": "..\\backend\\ApiOrder\\Program.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAACEAAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T18:50:10.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Controller\\OrderController.cs",
+              "RelativeDocumentMoniker": "..\\backend\\ApiOrder\\Controller\\OrderController.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Controller\\OrderController.cs",
+              "RelativeToolTip": "..\\backend\\ApiOrder\\Controller\\OrderController.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAQwCkAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-21T18:49:13.565Z",
+              "EditorCaption": ""
             }
           ]
         }

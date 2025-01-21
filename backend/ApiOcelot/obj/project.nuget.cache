@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AOAFhkmXykpMGnr0XJ3YGeYPpD9Q/cIT0GEOjvrA1gYZuyV1kT5kGi+a6CE6dAEaACs08Omg2KAYFzW/qRLgsQ==",
+  "dgSpecHash": "vgRChPHFiYoaD4XLYQE8kY+St+M3YxKYzI525Yw0sr1b9YfPegR5Z7KpqaNCfQ520NSJJnPlYjjJDzp0xlq6TQ==",
   "success": true,
-  "projectFilePath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ApiOcelot.csproj",
+  "projectFilePath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ApiOcelot.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danil\\.nuget\\packages\\fluentvalidation\\11.11.0\\fluentvalidation.11.11.0.nupkg.sha512",
     "C:\\Users\\danil\\.nuget\\packages\\ipaddressrange\\6.1.0\\ipaddressrange.6.1.0.nupkg.sha512",

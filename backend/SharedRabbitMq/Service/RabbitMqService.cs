@@ -15,8 +15,10 @@ namespace SharedRabbitMq.Service
         protected const string VirtualHost = "CUSTOM_HOST";
         protected readonly string LoggerExchange = $"{VirtualHost}.LoggerExchange";
 
-        //_hostname = "rabbitmq" quando utilizado docker
-        public string _hostname = "localhost";  // Nome do host do RabbitMQ
+        //_hostname = "localhost" dev
+        //_hostname = "rabbitmq" docker
+        public string _hostname = "";  // Nome do host do RabbitMQ
+        //public string _hostname = "localhost";  // Nome do host do RabbitMQ
         //todo pass nome da fila
         public string _queueName = ""; // Nome da fila
 
@@ -28,6 +30,14 @@ namespace SharedRabbitMq.Service
 
         public async Task InitializeService()
         {
+            #if DEBUG
+                _hostname = "localhost";
+            #else
+                _hostname = "rabbitmq";
+            #endif
+
+
+
             // Configura o Polly para retry e circuit breaker para RabbitMQ
             var retryPolicy = Policy.Handle<Exception>()
                 .WaitAndRetry(3, attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)));  // Retry exponencial

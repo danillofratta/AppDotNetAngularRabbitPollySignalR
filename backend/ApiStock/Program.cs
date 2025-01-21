@@ -24,8 +24,23 @@ builder.Services.AddHostedService<ConsumerStockAvailableService>();
 
 builder.Services.AddTransient<ProductRepository>();
 
+//var apiUrls = builder.Configuration.GetSection("ConnectionStrings").Get<Dictionary<string, string>>();
+//builder.Services.AddSingleton<IConnectionMultiplexer>(x =>
+//{    
+//    return ConnectionMultiplexer.Connect(apiUrls["redis"]);
+//});
+
+#if DEBUG
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
+#else
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("redis:6379"));
+#endif
+// Redis server
+
 //redis todo get from appsettings
-builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379")); // Redis server
+//builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379")); // Redis server
+
 //quando usado docker
 //builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("redis:6379")); // Redis server
 builder.Services.AddSingleton<IRedisCacheService, RedisCacheService>();

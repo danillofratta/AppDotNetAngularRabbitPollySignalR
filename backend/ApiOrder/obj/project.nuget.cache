@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hypSTwtBaZ7vRdpyQcdwGq1p1ismuMq8jaPmCt1P2AnqD3UZHM2SSB6m+ATukmkj2Ju8nb0dE8xMoSy118S8Jg==",
+  "dgSpecHash": "Ra0PqwGUAQb+rim4Tinr/uEO0zzlT+0YVSoarlPN27DQIVQWugEF3aHbSzJ6q9ZVIkgq/5spZHqVYYPRYxGT+Q==",
   "success": true,
-  "projectFilePath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\ApiOrder.csproj",
+  "projectFilePath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\ApiOrder.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.3.0\\microsoft.aspnetcore.authentication.abstractions.2.3.0.nupkg.sha512",
     "C:\\Users\\danil\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.3.0\\microsoft.aspnetcore.authorization.2.3.0.nupkg.sha512",
