@@ -1,18 +1,22 @@
+# Objetivo
+
 Este Projeto tem o objetivo de exemplificar o uso de diversas tecnologias e padrões diferentes aplicados tanto no backend como frontend.
 
 Você também pode ver outro projeto teste publicado usando .net, blazor server, blazor wasm, angular, nextjs, e nodejs no link: https://danillofratta-001-site1.itempurl.com/index.html
 
+# Tecnologias aplicadas
+
 Este projeto as seguintes tecnologias:
-•	Backend DOTNET:
-o	Serviços API restful
-o	RabbitMQ
-o	Polly 
-o	SignalR 
-o	CQRS
-o	MediatR
-o	Regis 
-o	Ocelot 
-o	Entity
+*	Backend DOTNET:
+*	Serviços API restful
+*	RabbitMQ
+*	Polly 
+*	SignalR 
+*	CQRS
+*	MediatR
+*	Regis 
+*	Ocelot 
+*	Entity
 
 •	Frontend Angular simples:
 o	Material
