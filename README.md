@@ -7,7 +7,7 @@ Você também pode ver outro projeto teste publicado usando .net, blazor server,
 # Tecnologias aplicadas
 
 Este projeto as seguintes tecnologias:
-*	Backend DOTNET:
+* Backend DOTNET:
   *	Serviços API restful
   *	RabbitMQ
   *	Polly 
