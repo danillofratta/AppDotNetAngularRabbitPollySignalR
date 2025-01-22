@@ -26,7 +26,7 @@ Este projeto as seguintes tecnologias:
 
 Exemplos de tecnologias e padrões aplicados:
 
-1.	Exemplificação de uso do RABBIT + SignalR + Polly
+## 1.	Exemplificação de uso do RABBIT + SignalR + Polly
 
 A comunicação entre os 3 serviços pelo Rabbit:
 *	Serviço Order (gerencia o pedido de  venda)
