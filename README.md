@@ -46,16 +46,18 @@ Este é o fluxo da FALHA na venda:
 *	Serviço Stock => produto e quantidade não OK?
   *	Envia notificação para serviço de order que altera status out of stock da order 
 
-2.	Exemplificação de uso CQRS + MediatR + Regis
+## 2.	Exemplificação de uso CQRS + MediatR + Regis
 
 No serviço Stock foi criada a funcionalidade simples de CRUD do product usando CQRS, MediatR e Redis.
 
-3.	Exemplificação de uso de Gateway
+## 3.	Exemplificação de uso de Gateway
 
 Foi adicionado Gateway com OCELOT para gerenciar os 3 serviços.
 
-4.	Exemplificação de build com Docker
+## 4.	Exemplificação de build com Docker
 
 Foi criado uma imagem para cada app e docker compose para todo o projeto.
+
+## Refatorar
 
 O objetivo é demonstrar o conhecimento e uso das tecnologias por isso não foi implementado padrões como DDD e por isso o ideal seria refatorar toda aplicação para separar as responsabilidades.
