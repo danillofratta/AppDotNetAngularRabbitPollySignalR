@@ -31,10 +31,14 @@ builder.Services.AddTransient<ProductRepository>();
 //});
 
 #if DEBUG
-
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
 #else
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("redis:6379"));
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(80); // Porta do container
+});
 #endif
 // Redis server
 

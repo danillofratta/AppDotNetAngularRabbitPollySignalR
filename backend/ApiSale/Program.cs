@@ -4,6 +4,7 @@ using ApiSale.Service;
 using Microsoft.EntityFrameworkCore;
 using SharedDatabase.Models;
 using SharedRabbitMq.Service;
+using StackExchange.Redis;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,6 +25,17 @@ builder.Services.AddSignalR();
 builder.Services.AddTransient<RabbitMqService>();
 //builder.Services.AddScoped(typeof(IRabbitMQPublisher<>), typeof(RabbitMQPublisher<>));
 builder.Services.AddHostedService<ConsumerStockOkService>();
+
+#if DEBUG
+
+#else
+builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("redis:6379"));
+
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(80); // Porta do container
+});
+#endif
 
 
 var app = builder.Build();

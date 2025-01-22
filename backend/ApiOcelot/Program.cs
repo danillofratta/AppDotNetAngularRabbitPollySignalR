@@ -8,7 +8,17 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
+#if DEBUG
+    builder.Configuration.AddJsonFile("ocelot.dev.json", optional: false, reloadOnChange: true);
+#else
+    builder.Configuration.AddJsonFile("ocelot.prod.json", optional: false, reloadOnChange: true);
+
+    builder.WebHost.ConfigureKestrel(options =>
+    {
+        options.ListenAnyIP(80); // Porta do container
+    });
+#endif
+
 
 builder.Services.AddOcelot();
 

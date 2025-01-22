@@ -1,6 +1,7 @@
 using ApiOrder.Service;
 using SharedDatabase.Models;
 using SharedRabbitMq.Service;
+using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -23,6 +24,17 @@ builder.Services.AddHostedService<ConsumerStockFailedService>();
 builder.Services.AddHostedService<ConsumerStockOkService>();
 builder.Services.AddHostedService<ConsumerWaitPaymentService>();
 builder.Services.AddHostedService<ConsumerPaymentOkService>();
+
+#if DEBUG
+
+#else
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(80); // Porta do container
+});
+#endif
+
+
 
 var app = builder.Build();
 
