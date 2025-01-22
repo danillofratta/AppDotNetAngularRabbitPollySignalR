@@ -8,41 +8,43 @@ Você também pode ver outro projeto teste publicado usando .net, blazor server,
 
 Este projeto as seguintes tecnologias:
 *	Backend DOTNET:
-*	Serviços API restful
-*	RabbitMQ
-*	Polly 
-*	SignalR 
-*	CQRS
-*	MediatR
-*	Regis 
-*	Ocelot 
-*	Entity
+  *	Serviços API restful
+  *	RabbitMQ
+  *	Polly 
+  *	SignalR 
+  *	CQRS
+  *	MediatR
+  *	Regis 
+  *	Ocelot 
+  *	Entity
 
-•	Frontend Angular simples:
-o	Material
-o	SignalR
+* Frontend Angular simples:
+  * Material
+  * SignalR
+ 
+# Exemplos aplicados:
 
 Exemplos de tecnologias e padrões aplicados:
 
 1.	Exemplificação de uso do RABBIT + SignalR + Polly
 
 A comunicação entre os 3 serviços pelo Rabbit:
-•	Serviço Order (gerencia o pedido de  venda)
-•	Serviço Stock (gerencia o estoque)
-•	Serviço Sale (gerencia a venda)
+*	Serviço Order (gerencia o pedido de  venda)
+*	Serviço Stock (gerencia o estoque)
+*	Serviço Sale (gerencia a venda)
 
 Este é o fluxo de venda OK:
-•	Serviço Order => cria e envia notificação para serviço stock
-•	Serviço Stock => produto e quantidade OK?
-o	Envia notificação para serviço de order que altera status da order
-o	Envia notificação para serviço de sale que cria a venda 
-•	Serviço Sale => payment OK
-o	Envia notificação para serviço de order que altera o status da order
+*	Serviço Order => cria e envia notificação para serviço stock
+*	Serviço Stock => produto e quantidade OK?
+  *	Envia notificação para serviço de order que altera status da order
+  *	Envia notificação para serviço de sale que cria a venda 
+*	Serviço Sale => payment OK
+  *	Envia notificação para serviço de order que altera o status da order
 
-Este é o fluxo de FALHA na venda:
-•	Serviço Order => cria e envia notificação para serviço stock
-•	Serviço Stock => produto e quantidade não OK?
-o	Envia notificação para serviço de order que altera status out of stock da order 
+Este é o fluxo da FALHA na venda:
+*	Serviço Order => cria e envia notificação para serviço stock
+*	Serviço Stock => produto e quantidade não OK?
+  *	Envia notificação para serviço de order que altera status out of stock da order 
 
 2.	Exemplificação de uso CQRS + MediatR + Regis
 
