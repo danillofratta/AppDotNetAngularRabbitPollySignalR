@@ -34,10 +34,10 @@ A comunicação entre os 3 serviços pelo Rabbit:
 *	Serviço Sale (gerencia a venda)
 
 Este é o fluxo de venda OK:
-*	Serviço Order => cria e envia notificação para serviço stock
-*	Serviço Stock => produto e quantidade OK?
-  * Envia notificação para serviço de order que altera status da order
-  * Envia notificação para serviço de sale que cria a venda 
+* Serviço Order => cria e envia notificação para serviço stock
+* Serviço Stock => produto e quantidade OK?
+ * Envia notificação para serviço de order que altera status da order
+ * Envia notificação para serviço de sale que cria a venda 
 *	Serviço Sale => payment OK
   *	Envia notificação para serviço de order que altera o status da order
 
