@@ -1,4 +1,8 @@
-using ApiOrder.Service;
+using ApiOrder.Service.Query;
+using ApiOrder.Service.RabbitMq.Consumer;
+using ApiOrder.Service.RabbitMq.Publisher;
+using ApiOrder.Service.ServiceCrud;
+using ApiOrder.Service.SignalIr;
 using SharedDatabase.Models;
 using SharedRabbitMq.Service;
 using StackExchange.Redis;
@@ -24,6 +28,10 @@ builder.Services.AddHostedService<ConsumerStockFailedService>();
 builder.Services.AddHostedService<ConsumerStockOkService>();
 builder.Services.AddHostedService<ConsumerWaitPaymentService>();
 builder.Services.AddHostedService<ConsumerPaymentOkService>();
+
+builder.Services.AddTransient<OrderServiceCrud>();
+builder.Services.AddTransient<OrderServicePublisher>();
+builder.Services.AddTransient<OrderServiceQuery>();
 
 #if DEBUG
 

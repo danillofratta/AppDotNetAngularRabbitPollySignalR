@@ -19,4 +19,9 @@
     <ProjectReference Include="..\SharedRabbitMq\SharedRabbitMq.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Service\RabbitMq\" />
+    <Folder Include="Service\SignalR\" />
+  </ItemGroup>
+
 </Project>

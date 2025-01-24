@@ -8,8 +8,11 @@ using System.Text.Json;
 using System.Text;
 using Polly;
 using SharedDatabase.Dto;
-using ApiOrder.Service;
 using Microsoft.AspNetCore.SignalR;
+using ApiOrder.Service.SignalIr;
+using ApiOrder.Service.Query;
+using ApiOrder.Service.ServiceCrud;
+using ApiOrder.Service.RabbitMq.Publisher;
 
 namespace ApiSale.Controller
 {
@@ -21,86 +24,39 @@ namespace ApiSale.Controller
     [Route("api/v1/[controller]")]
     public class OrderController : ControllerBase
     {
+        private readonly OrderServicePublisher _publisher;
+        private readonly OrderServiceCrud _servicecrud;
+        private readonly OrderServiceQuery _query;
         private readonly DBDevContext _context;
-        public readonly RabbitMqService _rabbitMqService;
 
         private readonly IHubContext<NotificationHub> _hubContext;
 
-        public OrderController(RabbitMqService rabbitMqService, DBDevContext context, IHubContext<NotificationHub> hubContext)
+        public OrderController(OrderServicePublisher publisher, OrderServiceCrud servicecrud, OrderServiceQuery query, DBDevContext context, IHubContext<NotificationHub> hubContext)
         {
-            _rabbitMqService = rabbitMqService;
+            _publisher = publisher; 
+            _servicecrud = servicecrud;
+            _query = query;
             _context = context;
             _hubContext = hubContext;
         }
 
-        //public OrderController(RabbitMqService rabbitMqService, DBDevContext context)
-        //{
-        //    _rabbitMqService = rabbitMqService;
-        //    _context = context;
-        //}
-
         [HttpGet("GetAll")]
         public async Task<ActionResult<List<OrderDto>>> GetAll()
         {
-            return Ok(await this.GetAllOrderDto());       
+            return Ok(await this._query.GetAllOrderDto());       
         }
 
-        [ApiExplorerSettings(IgnoreApi = true)]
-        [HttpGet]
-        public async Task<List<OrderDto>> GetAllOrderDto()
-        {
-            //todo nameproduct namestatus 
-            //todo adddto
-            //todo add foreign key e add include
-            //List<SharedDatabase.Dto.OrderDto> list = _context.Order.ToList();
-            var list = await (from a in _context.Order
-                        join b in _context.Status on a.Idstatus equals b.Id
-                        join c in _context.Product on a.Idproduct equals c.Id
-                        select new SharedDatabase.Dto.OrderDto
-                        {
-                            Id = a.Id,
-                            Idproduct = a.Amount,
-                            Idcustomer = a.Idcustomer,
-                            Idstatus = a.Idstatus,
-                            Price = a.Price,
-                            Amount = a.Amount,
-                            CreateAt = a.CreateAt,
-                            namestatus = b.Name,
-                            nameproduct = c.Name
-                        }).ToListAsync<OrderDto>();
-
-            return list;
-        }
-
-        //to try catch
         [HttpPost]
         public async Task<ActionResult<OrderDto>> CreateOrder([FromBody] Order record)
         {
             if (record == null)
                 return BadRequest("Order is required");
 
-            record = await this.CreateOrdemDB(record);
-            await this.NotifyStockAvailable(record);
+            record = await this._servicecrud.CreateOrdem(record);
+            await this._publisher.NotifyStockAvailable(record);
 
-            return Ok("ok");// CreatedAtAction("GetOrder", new { id = record.Id }, record);
+            return Ok("ok");
         }
-
-        //todo transacation rollback if fail rabbit
-        private async Task<Order> CreateOrdemDB(Order record)
-        {
-            record.Idstatus = 1;
-            _context.Order.Add(record);
-            await _context.SaveChangesAsync();
-
-            return record;
-        }
-
-        private async Task NotifyStockAvailable(Order record)
-        {
-            await _rabbitMqService.InitializeService();
-            _rabbitMqService._queueName = "OrderToStock-CheckProductAvailable-Queue";
-            _rabbitMqService.SendMessage(record);
-        }       
     }
 }
 

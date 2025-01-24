@@ -69,14 +69,9 @@ namespace ApiSale.Controller
             return list;
         }
 
-
-        //todo remove item from stock
         [HttpPost("PaymentOK")]
         public async Task<ActionResult<Sale>> PaymentSale([FromBody] int idsale)
         {
-            //if (record == null)
-            //    return BadRequest("Sale is required");
-
             try
             {
                 Sale sale =  await this.SaleStatusPayment(idsale, _context);
@@ -99,8 +94,6 @@ namespace ApiSale.Controller
         [HttpPost]
         public async Task<Sale> SaleStatusPayment(int idsale, DBDevContext context)
         {
-            //ApiExplorerSettings _context is null
-            //Sale sale = await _context.Sale.SingleAsync(x => x.Id == idsale);
             Sale sale = await context.Sale.SingleAsync(x => x.Id == idsale);
             if (sale != null){
                 sale.Idstatus = 8;
@@ -112,57 +105,12 @@ namespace ApiSale.Controller
             return null;
         }
 
-
         private async Task NotifyOrderPaymentOk(Order order)
         {
             await _rabbitMqService.InitializeService();
             _rabbitMqService._queueName = "SaleToOrder-PaymentOK-Queue";
             _rabbitMqService.SendMessage(order);            
         }
-
-
-        //não usar foi apenas para teste
-        //[HttpPost]
-        //public async Task<ActionResult<Sale>> CreateSale([FromBody] Order record)
-        //{
-        //    if (record == null)
-        //        return BadRequest("Order is required");
-
-        //    //todo method consume and return object order
-        //    await this.ConsumeCreate();
-        //    Sale sale = await this.CreateVendaDB(record);
-        //    await this.CreateVendaSendOrdem(sale);
-
-        //    return CreatedAtAction("GetSave", new { id = sale.Id }, sale);
-        //}
-
-        //private async Task ConsumeCreate()
-        //{
-
-        //}
-        //private async Task<Sale> CreateVendaDB(Order record)
-        //{
-        //    var order = _context.Order.Single(o => o.Id == record.Id);
-        //    Sale sale = new Sale();
-        //    sale.Idorder = order.Id;
-        //    sale.Idcustomer = order.Idcustomer;
-        //    sale.Idproduct = order.Idproduct;
-        //    sale.Value = order.Value;
-        //    sale.CreateAt = DateTime.Now;
-        //    sale.Idstatus = 2;
-                        
-        //    _context.Sale.Add(sale);
-        //    await _context.SaveChangesAsync();
-
-        //    return sale;
-        //}
-
-        //private async Task CreateVendaSendOrdem(Sale record)
-        //{
-        //    await _rabbitMqService.InitializeService();
-        //    _rabbitMqService._queueName = "sale create";
-        //    _rabbitMqService.SendMessage($"Registered Sale: {record.Id}, Value: {record.Value}");
-        //}
     }
 }
 

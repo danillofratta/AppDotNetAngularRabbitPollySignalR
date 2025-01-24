@@ -1,14 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\SolutionAll\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{D0D2F587-46BD-4E02-B006-AD5C09E2E503}|..\\backend\\ApiOcelot\\ApiOcelot.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiocelot\\ocelot.prod.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{419240A3-4F6E-4ADF-B974-6A5E8015C086}|..\\backend\\SharedDatabase\\SharedDatabase.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\shareddatabase\\models\\devdistribuidedcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -16,35 +9,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "devdistribuidedContext.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\Models\\devdistribuidedContext.cs",
-              "RelativeDocumentMoniker": "..\\backend\\SharedDatabase\\Models\\devdistribuidedContext.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedDatabase\\Models\\devdistribuidedContext.cs",
-              "RelativeToolTip": "..\\backend\\SharedDatabase\\Models\\devdistribuidedContext.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAmwCsAAAA/AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-22T14:20:48.634Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ocelot.prod.json",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.prod.json",
-              "RelativeDocumentMoniker": "..\\backend\\ApiOcelot\\ocelot.prod.json",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.prod.json",
-              "RelativeToolTip": "..\\backend\\ApiOcelot\\ocelot.prod.json",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAADoAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-01-22T14:36:28.35Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"

@@ -27,6 +27,7 @@ namespace ApiStock.Controller
             _context = context;
         }
 
+        //test
         [HttpGet("get")]
         public async Task<ActionResult<string>> Get()
         {
@@ -59,28 +60,25 @@ namespace ApiStock.Controller
 
         private async Task NotifySaleOk(Order order)
         {
-            await _rabbitMqService.InitializeService();
             _rabbitMqService._queueName = "StockToSale-StockOK-Queue";
-            _rabbitMqService.SendMessage(order);
-            //_rabbitMqService.SendMessage("Stock to Sale => Product quantity in stock ok");
+            await _rabbitMqService.InitializeService();            
+            _rabbitMqService.SendMessage(order);            
         }
 
         private async Task NotifyOrderOk(Order order)
         {
-            await _rabbitMqService.InitializeService();
             _rabbitMqService._queueName = "StockToOrder-StockOK-Queue";
-            _rabbitMqService.SendMessage(order);
-            //_rabbitMqService.SendMessage("Stock to Order => Product quantity in stock ok");
+            await _rabbitMqService.InitializeService();            
+            _rabbitMqService.SendMessage(order);            
         }
 
         //todo create DTO and send amout of product in stock
         //private async Task NotifyOrderFaile(int amoutproduct, int amoutstock)
         private async Task NotifyOrderFailed(Order order)
         {
-            await _rabbitMqService.InitializeService();
             _rabbitMqService._queueName = "StockToOrder-StockFailed-Queue";
-            _rabbitMqService.SendMessage(order);
-            //_rabbitMqService.SendMessage($"Stock to Order => Product quantity {amoutproduct} in stock {amoutstock}");
+            await _rabbitMqService.InitializeService();            
+            _rabbitMqService.SendMessage(order);            
         }
     }
 }
