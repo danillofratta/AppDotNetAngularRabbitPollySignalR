@@ -8,6 +8,7 @@ using System.Text.Json;
 using System.Text;
 using Polly;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using SharedDatabase.Dto;
 
 namespace ApiStock.Controller
 {
@@ -28,15 +29,15 @@ namespace ApiStock.Controller
             _context = context;
         }
 
-        [HttpPost]
-        public async Task<ActionResult> AddProductIntoStock([FromBody] int idproduct, int amount)
+        [HttpPost("addstock")]
+        public async Task<ActionResult> AddProductIntoStock([FromBody] StockDto dto)
         {
             //todo add bussines class
-            Stock stock = await _context.Stock.FirstOrDefaultAsync(x => x.Idproduct == idproduct);
+            Stock stock = await _context.Stock.FirstOrDefaultAsync(x => x.Idproduct == dto.idproduct);
             if (stock != null)
             {
-                var total = await _context.Stock.Where(x => x.Idproduct == idproduct).SumAsync(x => x.Amount);                
-                stock.Amount = total + amount;
+                var total = await _context.Stock.Where(x => x.Idproduct == dto.idproduct).SumAsync(x => x.Amount);                
+                stock.Amount = total + dto.amount;
 
                 _context.Entry(stock).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 await _context.SaveChangesAsync();
@@ -46,8 +47,8 @@ namespace ApiStock.Controller
             else
             {
                 stock = new Stock();
-                stock.Idproduct = idproduct;
-                stock.Amount = amount;
+                stock.Idproduct = dto.idproduct;
+                stock.Amount = dto.amount;
                 _context.Entry(stock).State = Microsoft.EntityFrameworkCore.EntityState.Added;
                 await _context.SaveChangesAsync();
 
@@ -59,10 +60,19 @@ namespace ApiStock.Controller
 
         //get all
         [HttpGet]
-        public async Task<ActionResult<string>> Get()
+        public async Task<ActionResult<List<StockDto>>> Get()
         {
-            //todo list all product an amount
-            return Ok("ok");
+            var list = (from a in _context.Stock                        
+                        join b in _context.Product on a.Idproduct equals b.Id
+                        select new SharedDatabase.Dto.StockDto
+                        {
+                            id = a.Id,
+                            idproduct = a.Idproduct,                            
+                            amount = a.Amount,
+                            nameproduct = b.Name
+                        }).ToList<StockDto>();
+
+            return Ok(list);
         }
 
         [ApiExplorerSettings(IgnoreApi = true)]

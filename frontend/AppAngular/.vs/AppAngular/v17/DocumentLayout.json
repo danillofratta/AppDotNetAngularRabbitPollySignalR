@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\stock\\stock.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\stock\\stock.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\product\\product.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\product\\product.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\stock\\stock.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\stock\\stock.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\product\\product.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\product\\product.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +18,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 0,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "product.component.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\product\\product.component.ts",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\product\\product.component.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\product\\product.component.ts",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\product\\product.component.ts",
+              "ViewState": "AQIAADsAAAAAAAAAAAAswE0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-29T05:23:03.62Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "product.component.html",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\product\\product.component.html",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\product\\product.component.html",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\product\\product.component.html",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\product\\product.component.html",
+              "ViewState": "AQIAACYAAAAAAAAAAAAYwDMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-29T05:22:38.051Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
@@ -47,34 +75,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "stock.component.html",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.html",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\stock\\stock.component.html",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.html",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\stock\\stock.component.html",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-28T23:48:18.475Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "stock.component.ts",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.ts",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\stock\\stock.component.ts",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.ts",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\stock\\stock.component.ts",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAgwG0AAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-28T23:48:20.549Z",
-              "IsPinned": true,
-              "EditorCaption": ""
             }
           ]
         }

@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { StockDto } from '../../../../domain/dto/StockDto';
 import { Observable, catchError, finalize, of } from 'rxjs';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { StockApi } from '../../../../domain/api/StockApi';
-import { SignalRStockService } from '../../../../domain/SignalR/SignalRStockService';
+import { ProductDto } from '../../../../domain/dto/ProductDto';
+
 
 @Component({
   selector: 'app-stock',
@@ -17,6 +18,7 @@ export class StockComponent implements OnInit, AfterViewInit {
   public form: FormGroup;
   public busy = false;
   public isLoading = true;
+  private productDto: any;
 
   dataSource = new MatTableDataSource<StockDto>();
   /*displayedColumns = ['actions', 'id', 'name', 'price'];*/
@@ -26,13 +28,12 @@ export class StockComponent implements OnInit, AfterViewInit {
 
   constructor(
     private api: StockApi,
-    private fb: FormBuilder,
-    private signalRService: SignalRStockService
+    private fb: FormBuilder
   ) {
     // Inicializando o formulário reativo
     this.form = this.fb.group({
-      id: ['']
-      //name: ['', Validators.required],
+      amount: ['', [Validators.required]],
+      idproduct: ['', Validators.required],
       //price: ['', [Validators.required, Validators.min(0)]],
     });
   }
@@ -46,41 +47,41 @@ export class StockComponent implements OnInit, AfterViewInit {
   async ngOnInit() {
     this.isLoading = true;
 
-    // Carregar a lista inicial de produtos
     await this.loadList();
-
-    // Configuração do SignalR para atualizações em tempo real (descomentado caso necessário)
-    // this.signalRService.onGetListOrderUpdated((updatedDataList) => {
-    //   this.dataSource.data = updatedDataList as ProductDto[];
-    // });
   }
 
-  /** Limpa o formulário para criação de um novo produto */
   new() {
     this.form.reset();
   }
 
-  /** Salva ou atualiza um produto */
   async save() {
+
+    if (!this.productDto) return;
+
     if (this.form.valid) {
       this.busy = true;
 
-      const product = this.form.value as StockDto;
+      const stock: StockDto = {
+        id: 0,
+        idproduct: this.productDto.id,
+        nameproduct: '',
+        amount: this.form.get('amount')?.value,
+        price: 0
+      };
 
       try {
-        if (product.id) {
-          // Atualiza o produto existente
-          //await this.api.Update(product);
-        } else {
-          // Salva um novo produto
-          await this.api.Save(product);
-        }
-
-        // Após salvar, recarregar a lista e limpar o formulário
+        await this.api.Save(stock);
         await this.loadList();
+
         this.form.reset();
+        this.productDto = null;
+        this.onProductSelected(this.productDto);
+
+        this.form.markAsPristine();
+        this.form.markAsUntouched();
+
       } catch (error) {
-        console.error('Erro ao salvar o produto:', error);
+        console.error('Erro ao salvar o stock:', error);
       } finally {
         this.busy = false;
       }
@@ -93,7 +94,7 @@ export class StockComponent implements OnInit, AfterViewInit {
 
     this.list$ = (await this.api.GetListAll()).pipe(
       catchError((error) => {
-        console.error('Erro ao carregar lista de produtos:', error);
+        console.error('Erro ao carregar lista de stock:', error);
         return of([]); // Retorna uma lista vazia em caso de erro
       }),
       finalize(() => {
@@ -102,9 +103,19 @@ export class StockComponent implements OnInit, AfterViewInit {
     );
 
     // Atualiza a tabela de dados
-    this.list$.subscribe((products) => {
-      this.dataSource.data = products;
+    this.list$.subscribe((stock) => {
+      this.dataSource.data = stock;
     });
+  }
+
+  onProductSelected(record: ProductDto) {
+    this.productDto = record;
+    //this.form.controls['idproduct'].setValue(record.id);
+    if (record) {
+      this.form.controls['idproduct'].setValue(record.id);
+    } else {
+      this.form.controls['idproduct'].reset();
+    }
   }
 
   /** Preenche o formulário para atualização */

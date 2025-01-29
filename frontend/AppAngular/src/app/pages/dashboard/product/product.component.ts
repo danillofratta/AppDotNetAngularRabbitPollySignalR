@@ -1,11 +1,10 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
 import { ProductDto } from '../../../../domain/dto/ProductDto';
-import { catchError, finalize, Observable, of } from 'rxjs';
+import { catchError, delay, finalize, firstValueFrom, Observable, of } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { ProductApi } from '../../../../domain/api/ProductApi';
-import { SignalRProductService } from '../../../../domain/SignalR/SignalRProductService';
 
 @Component({
   selector: 'app-product',
@@ -26,7 +25,7 @@ export class ProductComponent implements OnInit, AfterViewInit {
   constructor(
     private api: ProductApi,
     private fb: FormBuilder,
-    private signalRService: SignalRProductService
+    private cdr: ChangeDetectorRef
   ) {
     // Inicializando o formulário reativo
     this.form = this.fb.group({
@@ -39,6 +38,10 @@ export class ProductComponent implements OnInit, AfterViewInit {
   ngAfterViewInit(): void {
     if (this.paginator) {
       this.dataSource.paginator = this.paginator;
+    } else {
+      setTimeout(() => {
+        this.dataSource.paginator = this.paginator!;
+      });
     }
   }
 
@@ -68,14 +71,11 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
       try {
         if (product.id) {
-          // Atualiza o produto existente
           await this.api.Update(product);
         } else {
-          // Salva um novo produto
           await this.api.Save(product);
         }
-
-        // Após salvar, recarregar a lista e limpar o formulário
+        
         await this.loadList();
         this.form.reset();
       } catch (error) {
@@ -90,20 +90,19 @@ export class ProductComponent implements OnInit, AfterViewInit {
   async loadList() {
     this.isLoading = true;
 
-    this.list$ = (await this.api.GetListAll()).pipe(
-      catchError((error) => {
-        console.error('Erro ao carregar lista de produtos:', error);
-        return of([]); // Retorna uma lista vazia em caso de erro
-      }),
-      finalize(() => {
-        this.isLoading = false; // Finaliza o estado de carregamento
-      })
-    );
-
-    // Atualiza a tabela de dados
-    this.list$.subscribe((products) => {
+    try {
+      const products = await firstValueFrom(await this.api.GetListAll());
       this.dataSource.data = products;
-    });
+      
+      //this.dataSource.data = [...products]; 
+      //await this.cdr.detectChanges();
+
+    } catch (error) {
+      console.error('Erro ao carregar lista de produtos:', error);
+      this.dataSource.data = []; // Se houver erro, limpa a lista
+    } finally {
+      this.isLoading = false;
+    }
   }
 
   /** Preenche o formulário para atualização */

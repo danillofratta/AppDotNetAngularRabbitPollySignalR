@@ -1,7 +1,7 @@
 export interface StockDto{
-    id: number;
-  amount: number;
+  id: number;  
   idproduct: number;
   nameproduct: string;
-
+  amount: number;
+  price: number
 }

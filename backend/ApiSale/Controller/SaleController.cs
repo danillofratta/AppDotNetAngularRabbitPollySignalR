@@ -54,7 +54,7 @@ namespace ApiSale.Controller
                         select new SharedDatabase.Dto.SaleDto
                         {
                             Id = a.Id,
-                            Idproduct = a.Amount,
+                            Idproduct = a.Idproduct,
                             Idcustomer = a.Idcustomer,
                             Idstatus = a.Idstatus,
                             Idorder = a.Idorder,

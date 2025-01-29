@@ -29,6 +29,7 @@ import { ProductComponent } from './pages/dashboard/product/product.component';
 import { StockComponent } from './pages/dashboard/stock/stock.component';
 import { ProductApi } from '../domain/api/ProductApi';
 import { StockApi } from '../domain/api/StockApi';
+import { ProductAutoCompleteComponent } from './components/product-auto-complete/product-auto-complete.component';
 
 @NgModule({
     declarations: [
@@ -40,7 +41,8 @@ import { StockApi } from '../domain/api/StockApi';
 
         LoadingSpinnerComponent,
           ProductComponent,
-          StockComponent
+          StockComponent,
+          ProductAutoCompleteComponent
     ],
     imports: [
         BrowserModule,

@@ -26,6 +26,6 @@ export class StockApi extends API {
   }
 
   async Save(dto: StockDto) {
-   return this._http.post(`${this._baseurl + this._endpoint}`, dto).subscribe();
+    return this._http.post(`${this._baseurl + this._endpoint + '/addstock/'}`, dto).subscribe();
   }  
 }

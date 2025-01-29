@@ -1,14 +1,21 @@
-<h1 id="tableLabel">Product</h1>
+<h1 id="tableLabel">Stock</h1>
 
 <app-loading-spinner [isLoading]="isLoading" [message]="'Loading'"></app-loading-spinner>
 
 <!--todo criar autocomplete product-->
 <form [formGroup]="form" *ngIf="!busy">
-  
+
+  <input formControlName="idproduct" type="hidden" readonly />
+  <app-product-auto-complete placeholder="Is required"
+                             *ngIf="!isLoading"                             
+                             (productSelected)="onProductSelected($event)" />
+
+
   <mat-form-field>
     <mat-label>Amount</mat-label>
     <input matInput formControlName="amount" type="number" />
-  </mat-form-field>  
+  </mat-form-field>
+
   <button mat-raised-button color="primary" type="submit" (click)="save()">Save</button>
 </form>
 
@@ -16,33 +23,23 @@
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z6">
 
-    <!-- Actions Column -->
-    <!-- Actions Column -->
-    <!--<ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell *matCellDef="let element">
-        <button mat-button color="primary" (click)="onUpdate(element.id)">
-          <mat-icon>edit</mat-icon> Update
-        </button>-->
-        <!--<button mat-button color="red" (click)="onDelete(element.id)">
-          <mat-icon>delete</mat-icon> Delete
-        </button>-->
-      <!--</td>
-    </ng-container>-->
-
-
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> id </th>
       <td mat-cell *matCellDef="let element"> {{element.id}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> name </th>
+    <ng-container matColumnDef="idproduct">
+      <th mat-header-cell *matHeaderCellDef> idproduct </th>
+      <td mat-cell *matCellDef="let element"> {{element.idproduct}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="nameproduct">
+      <th mat-header-cell *matHeaderCellDef> nameproduct </th>
       <td mat-cell *matCellDef="let element"> {{element.nameproduct}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="price">
-      <th mat-header-cell *matHeaderCellDef> price </th>
+    <ng-container matColumnDef="amount">
+      <th mat-header-cell *matHeaderCellDef>amount</th>
       <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
     </ng-container>
 

@@ -31,6 +31,12 @@ namespace ApiStock.Controller
             return Ok(await _repository.GetById(id));
         }
 
+        [HttpGet("getbyname/{name}")]
+        public async Task<IActionResult> Get(string name)
+        {
+            return Ok(await _repository.GetByName(name));
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post(ProductCreateCommand command)
         { 

@@ -27,7 +27,11 @@ export class ProductApi extends API {
 
   async GetById(id: number) {   
     return this._http.get<ProductDto[]>(`${this._baseurl + this._endpoint + id}`);
-   }
+  }
+
+  async GetByName(name: string) {
+    return this._http.get<ProductDto[]>(`${this._baseurl + this._endpoint + 'getbyname/' + name}`);
+  }
 
   async Save(dto: ProductDto) {
    return this._http.post(`${this._baseurl + this._endpoint}`, dto).subscribe();
