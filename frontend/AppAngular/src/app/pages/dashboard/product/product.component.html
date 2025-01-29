@@ -1,0 +1,68 @@
+<h1 id="tableLabel">Product</h1>
+
+<app-loading-spinner [isLoading]="isLoading" [message]="'Loading'"></app-loading-spinner>
+
+<mat-form-field>
+  <mat-label>Id</mat-label>
+  <input matInput formControlName="id" type="number" readonly />
+</mat-form-field>
+<button mat-raised-button color="primary" type="submit" (click)="new()">New</button>
+
+<form [formGroup]="form" *ngIf="!busy">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput formControlName="name" type="text" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="price" type="number" />
+  </mat-form-field>
+  <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid" (click)="save()">Save</button>
+  <!--<button mat-raised-button color="primary" type="submit"  (click)="save()">Save</button>-->
+</form>
+
+<div *ngIf="!isLoading">
+
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z6">
+
+    <!-- Actions Column -->
+    <!-- Actions Column -->
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef>  </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button color="primary" (click)="onUpdate(element.id)">
+          <mat-icon>edit</mat-icon> Update
+        </button>
+        <button mat-button color="red" (click)="onDelete(element.id)">
+          <mat-icon>delete</mat-icon> Delete
+        </button>
+      </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> id </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> price </th>
+      <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+  <mat-paginator [pageSizeOptions]="[10, 50, 100]"
+                 [pageSize]="10"
+                 showFirstLastButtons
+                 aria-label="Select page">
+  </mat-paginator>
+</div>

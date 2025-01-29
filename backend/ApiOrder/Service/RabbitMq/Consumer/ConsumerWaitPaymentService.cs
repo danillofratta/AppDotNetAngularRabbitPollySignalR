@@ -1,6 +1,6 @@
 ﻿using ApiOrder.Service.Query;
 using ApiOrder.Service.ServiceCrud;
-using ApiOrder.Service.SignalIr;
+using ApiOrder.Service.SignalR;
 using ApiSale.Controller;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
@@ -21,20 +21,28 @@ namespace ApiOrder.Service.RabbitMq.Consumer
     public class ConsumerWaitPaymentService : BackgroundService
     {
         private readonly RabbitMqService _rabbitMqService;
-        private readonly IServiceScopeFactory _scopeFactory;
+        //private readonly IServiceScopeFactory _scopeFactory;
         private readonly IHubContext<NotificationHub> _hubContext;
 
         private readonly OrderServiceQuery _query;
         private readonly OrderServiceCrud _servicecrud;
 
-        public ConsumerWaitPaymentService(OrderServiceCrud servicecrud, OrderServiceQuery query, RabbitMqService rabbitMqService, IServiceScopeFactory scopeFactory, IHubContext<NotificationHub> hubContext)
+        //public ConsumerWaitPaymentService(OrderServiceCrud servicecrud, OrderServiceQuery query, RabbitMqService rabbitMqService, IServiceScopeFactory scopeFactory, IHubContext<NotificationHub> hubContext)
+        //{
+        //    _servicecrud = servicecrud;
+        //    _query = query;
+        //    _rabbitMqService = rabbitMqService;
+        //    _scopeFactory = scopeFactory;
+        //    _hubContext = hubContext;
+        //}
+        public ConsumerWaitPaymentService(OrderServiceCrud servicecrud, OrderServiceQuery query, RabbitMqService rabbitMqService, IHubContext<NotificationHub> hubContext)
         {
             _servicecrud = servicecrud;
             _query = query;
-            _rabbitMqService = rabbitMqService;
-            _scopeFactory = scopeFactory;
+            _rabbitMqService = rabbitMqService;            
             _hubContext = hubContext;
         }
+
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
@@ -42,21 +50,23 @@ namespace ApiOrder.Service.RabbitMq.Consumer
             await _rabbitMqService.InitializeService();
             await Task.Delay(2000);
 
-            var scope = _scopeFactory.CreateScope();
-            var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
+            //var scope = _scopeFactory.CreateScope();
+            //var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
 
             _rabbitMqService.ReceiveMessages(async (message) =>
             {
                 var order = JsonSerializer.Deserialize<Order>(message)!;
 
-                OrderStatusWaitPayment(order, dbContext);
+                //OrderStatusWaitPayment(order, dbContext);
+                OrderStatusWaitPayment(order);
             });
 
 
             await Task.CompletedTask;
         }
 
-        private async Task OrderStatusWaitPayment(Order order, DBDevContext dbContext)
+        //private async Task OrderStatusWaitPayment(Order order, DBDevContext dbContext)
+        private async Task OrderStatusWaitPayment(Order order)
         {
             this._servicecrud.UpdateStatusWaitPayment(order);
             

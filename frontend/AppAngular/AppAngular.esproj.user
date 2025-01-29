@@ -7,7 +7,7 @@
   "type": "chrome",
   "request": "launch",
   "url": "http://localhost:4200",
-  "webRoot": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuided\\frontend\\AppAngular"
+  "webRoot": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular"
 }</LaunchJsonTarget>
   </PropertyGroup>
 </Project>

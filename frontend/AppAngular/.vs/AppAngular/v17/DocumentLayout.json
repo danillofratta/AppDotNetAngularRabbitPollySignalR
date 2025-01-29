@@ -1,18 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\",
+  "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\domain\\api\\saleapi.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\domain\\api\\saleapi.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\stock\\stock.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\stock\\stock.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\sale\\sale.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\sale\\sale.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 - dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\sale\\sale.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\sale\\sale.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\stock\\stock.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\stock\\stock.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,34 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "sale.component.ts",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\sale\\sale.component.ts",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\sale\\sale.component.ts",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\sale\\sale.component.ts",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\sale\\sale.component.ts",
-              "ViewState": "AQIAAE0AAAAAAAAAAAAowGAAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-17T23:59:47.599Z",
-              "IsPinned": true
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "sale.component.html",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\sale\\sale.component.html",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\sale\\sale.component.html",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\sale\\sale.component.html",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\sale\\sale.component.html",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-18T00:09:17.194Z",
-              "IsPinned": true
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
@@ -80,15 +50,30 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "stock.component.html",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.html",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\stock\\stock.component.html",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.html",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\stock\\stock.component.html",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-28T23:48:18.475Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SaleApi.ts",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\domain\\api\\SaleApi.ts",
-              "RelativeDocumentMoniker": "src\\domain\\api\\SaleApi.ts",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 - Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\domain\\api\\SaleApi.ts",
-              "RelativeToolTip": "src\\domain\\api\\SaleApi.ts",
-              "ViewState": "AQIAAAYAAAAAAAAAAADgvxEAAAAOAAAA",
+              "Title": "stock.component.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.ts",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\stock\\stock.component.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.ts",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\stock\\stock.component.ts",
+              "ViewState": "AQIAAGMAAAAAAAAAAAAgwG0AAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-18T00:15:15.149Z",
+              "WhenOpened": "2025-01-28T23:48:20.549Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]

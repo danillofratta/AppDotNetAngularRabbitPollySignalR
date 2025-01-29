@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SharedDatabase")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a70051115c3662f241713901a0660b486049617c")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d34a2dbc40726495eb3755230936be780386c852")]
 [assembly: System.Reflection.AssemblyProductAttribute("SharedDatabase")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SharedDatabase")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

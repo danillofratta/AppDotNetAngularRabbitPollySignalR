@@ -13,7 +13,6 @@ namespace ApiStock.Controller
     {
         private readonly IMediator _mediator;
         private readonly ProductRepository _repository;
-
         public ProductController(IMediator mediator, ProductRepository repository)
         {
             this._mediator = mediator;

@@ -1,6 +1,5 @@
 ﻿using ApiOrder.Service.Query;
 using ApiOrder.Service.ServiceCrud;
-using ApiOrder.Service.SignalIr;
 using Microsoft.AspNetCore.SignalR;
 using SharedDatabase.Models;
 using SharedRabbitMq.Service;

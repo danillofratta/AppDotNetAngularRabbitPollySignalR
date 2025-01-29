@@ -31,7 +31,13 @@ builder.Services.AddTransient<ProductRepository>();
 //});
 
 #if DEBUG
-builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("localhost:6379"));
+var apiUrls = builder.Configuration.GetSection("ConnectionStrings").Get<Dictionary<string, string>>();
+builder.Services.AddSingleton<IConnectionMultiplexer>(x =>
+{
+    //return ConnectionMultiplexer.Connect(apiUrls["redis"]);
+    return ConnectionMultiplexer.Connect("localhost: 6379");
+
+});
 #else
 builder.Services.AddSingleton<IConnectionMultiplexer>(ConnectionMultiplexer.Connect("redis:6379"));
 

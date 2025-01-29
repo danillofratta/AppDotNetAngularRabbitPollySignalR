@@ -1,6 +1,6 @@
 ﻿using ApiOrder.Service.Query;
 using ApiOrder.Service.ServiceCrud;
-using ApiOrder.Service.SignalIr;
+using ApiOrder.Service.SignalR;
 using ApiSale.Controller;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;

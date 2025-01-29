@@ -133,9 +133,6 @@ C:\1 Arquivos\TI\0 - Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj
 C:\1 Arquivos\TI\0 - Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ref\ApiStock.dll
 C:\1 Arquivos\TI\0 - Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\bin\Debug\net8.0\MediatR.dll
 C:\1 Arquivos\TI\0 - Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\bin\Debug\net8.0\MediatR.Extensions.Microsoft.DependencyInjection.dll
-C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ApiStock.dll
-C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\refint\ApiStock.dll
-C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ApiStock.pdb
 C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\bin\Debug\net8.0\appsettings.Development.json
 C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\bin\Debug\net8.0\appsettings.json
 C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\bin\Debug\net8.0\ApiStock.exe
@@ -200,5 +197,8 @@ C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\D
 C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\staticwebassets.pack.json
 C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\scopedcss\bundle\ApiStock.styles.css
 C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ApiStock.csproj.Up2Date
+C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ApiStock.dll
+C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\refint\ApiStock.dll
+C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ApiStock.pdb
 C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ApiStock.genruntimeconfig.cache
 C:\1 Arquivos\TI\0 Dev\AppDistribuidedDotNetRabbitAngular\backend\ApiStock\obj\Debug\net8.0\ref\ApiStock.dll

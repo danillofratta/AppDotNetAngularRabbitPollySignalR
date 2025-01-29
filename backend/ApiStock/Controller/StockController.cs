@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Text.Json;
 using System.Text;
 using Polly;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 
 namespace ApiStock.Controller
 {
@@ -27,11 +28,40 @@ namespace ApiStock.Controller
             _context = context;
         }
 
-        //test
-        [HttpGet("get")]
+        [HttpPost]
+        public async Task<ActionResult> AddProductIntoStock([FromBody] int idproduct, int amount)
+        {
+            //todo add bussines class
+            Stock stock = await _context.Stock.FirstOrDefaultAsync(x => x.Idproduct == idproduct);
+            if (stock != null)
+            {
+                var total = await _context.Stock.Where(x => x.Idproduct == idproduct).SumAsync(x => x.Amount);                
+                stock.Amount = total + amount;
+
+                _context.Entry(stock).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+                await _context.SaveChangesAsync();
+
+                return Ok($"Product with total {stock.Amount} in Stock");
+            }
+            else
+            {
+                stock = new Stock();
+                stock.Idproduct = idproduct;
+                stock.Amount = amount;
+                _context.Entry(stock).State = Microsoft.EntityFrameworkCore.EntityState.Added;
+                await _context.SaveChangesAsync();
+
+                return Ok($"Product with total {stock.Amount} in Stock");
+            }
+                
+            return BadRequest("Product and Amount is required");
+        }
+
+        //get all
+        [HttpGet]
         public async Task<ActionResult<string>> Get()
         {
-
+            //todo list all product an amount
             return Ok("ok");
         }
 

@@ -1,5 +1,4 @@
-﻿using ApiOrder.Service.SignalIr;
-using Microsoft.AspNetCore.SignalR;
+﻿using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Polly;
 using SharedDatabase.Models;

@@ -1,6 +1,6 @@
 ﻿using ApiOrder.Service.Query;
 using ApiOrder.Service.ServiceCrud;
-using ApiOrder.Service.SignalIr;
+using ApiOrder.Service.SignalR;
 using ApiSale.Controller;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
@@ -21,18 +21,26 @@ namespace ApiOrder.Service.RabbitMq.Consumer
     public class ConsumerStockFailedService : BackgroundService
     {
         private readonly RabbitMqService _rabbitMqService;
-        private readonly IServiceScopeFactory _scopeFactory;
+        //private readonly IServiceScopeFactory _scopeFactory;
         private readonly IHubContext<NotificationHub> _hubContext;
 
         private readonly OrderServiceQuery _query;
         private readonly OrderServiceCrud _servicecrud;
 
-        public ConsumerStockFailedService(OrderServiceCrud servicecrud, OrderServiceQuery query, RabbitMqService rabbitMqService, IServiceScopeFactory scopeFactory, IHubContext<NotificationHub> hubContext)
+        //public ConsumerStockFailedService(OrderServiceCrud servicecrud, OrderServiceQuery query, RabbitMqService rabbitMqService, IServiceScopeFactory scopeFactory, IHubContext<NotificationHub> hubContext)
+        //{
+        //    _servicecrud = servicecrud;
+        //    _query = query;
+        //    _rabbitMqService = rabbitMqService;
+        //    _scopeFactory = scopeFactory;
+        //    _hubContext = hubContext;
+        //}
+        public ConsumerStockFailedService(OrderServiceCrud servicecrud, OrderServiceQuery query, RabbitMqService rabbitMqService, IHubContext<NotificationHub> hubContext)
         {
             _servicecrud = servicecrud;
             _query = query;
             _rabbitMqService = rabbitMqService;
-            _scopeFactory = scopeFactory;
+            //_scopeFactory = scopeFactory;
             _hubContext = hubContext;
         }
 
@@ -45,14 +53,15 @@ namespace ApiOrder.Service.RabbitMq.Consumer
 
             //while (!stoppingToken.IsCancellationRequested)
             //{
-            var scope = _scopeFactory.CreateScope();
-            var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
+            //var scope = _scopeFactory.CreateScope();
+            //var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
 
             _rabbitMqService.ReceiveMessages(async (message) =>
             {
                 var order = JsonSerializer.Deserialize<Order>(message)!;
 
-                OrderStatusFailed(order, dbContext);
+                //OrderStatusFailed(order, dbContext);
+                OrderStatusFailed(order);
             });
             //    await Task.Delay(1000, stoppingToken);
             //}
@@ -61,7 +70,8 @@ namespace ApiOrder.Service.RabbitMq.Consumer
         }
 
         //todo put in core domain service
-        private async Task OrderStatusFailed(Order order, DBDevContext dbContext)
+        //private async Task OrderStatusFailed(Order order, DBDevContext dbContext)
+        private async Task OrderStatusFailed(Order order)
         {
             this._servicecrud.UpdateStatusOutOfStock(order);
 

@@ -2,19 +2,27 @@ using ApiOrder.Service.Query;
 using ApiOrder.Service.RabbitMq.Consumer;
 using ApiOrder.Service.RabbitMq.Publisher;
 using ApiOrder.Service.ServiceCrud;
-using ApiOrder.Service.SignalIr;
+using ApiOrder.Service.SignalR;
 using SharedDatabase.Models;
 using SharedRabbitMq.Service;
 using StackExchange.Redis;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DBDevContext>();
+builder.Services.AddSingleton<DBDevContext>();
+
+builder.Services.AddTransient<OrderServiceCrud>();
+builder.Services.AddTransient<OrderServiceQuery>();
+
+builder.Services.AddTransient<RabbitMqService>();
+
+builder.Services.AddTransient<OrderServicePublisher>();
+
+builder.Services.AddHostedService<ConsumerStockFailedService>();
+builder.Services.AddHostedService<ConsumerStockOkService>();
+builder.Services.AddHostedService<ConsumerWaitPaymentService>();
+builder.Services.AddHostedService<ConsumerPaymentOkService>();
 
 builder.Services.AddSignalR();
 
@@ -22,16 +30,6 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddTransient<RabbitMqService>();
-//builder.Services.AddScoped(typeof(IRabbitMQPublisher<>), typeof(RabbitMQPublisher<>));
-builder.Services.AddHostedService<ConsumerStockFailedService>();
-builder.Services.AddHostedService<ConsumerStockOkService>();
-builder.Services.AddHostedService<ConsumerWaitPaymentService>();
-builder.Services.AddHostedService<ConsumerPaymentOkService>();
-
-builder.Services.AddTransient<OrderServiceCrud>();
-builder.Services.AddTransient<OrderServicePublisher>();
-builder.Services.AddTransient<OrderServiceQuery>();
 
 #if DEBUG
 

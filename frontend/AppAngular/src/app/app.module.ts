@@ -25,6 +25,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
 import { SignalRSaleService } from '../domain/SignalR/SignalRSaleService';
 import { SignalROrderService } from '../domain/SignalR/SignalROrderService ';
+import { ProductComponent } from './pages/dashboard/product/product.component';
+import { StockComponent } from './pages/dashboard/stock/stock.component';
+import { ProductApi } from '../domain/api/ProductApi';
+import { StockApi } from '../domain/api/StockApi';
 
 @NgModule({
     declarations: [
@@ -34,7 +38,9 @@ import { SignalROrderService } from '../domain/SignalR/SignalROrderService ';
         SaleComponent,
         DashboardComponent,
 
-        LoadingSpinnerComponent
+        LoadingSpinnerComponent,
+          ProductComponent,
+          StockComponent
     ],
     imports: [
         BrowserModule,
@@ -59,7 +65,7 @@ import { SignalROrderService } from '../domain/SignalR/SignalROrderService ';
       MatCardModule  
     ],
     providers: [OrderApi, SaleApi, provideAnimationsAsync(),
-      SignalRSaleService, SignalROrderService],
+      SignalRSaleService, SignalROrderService, ProductApi, StockApi],
     //,
     //{
     //  provide: APP_INITIALIZER,

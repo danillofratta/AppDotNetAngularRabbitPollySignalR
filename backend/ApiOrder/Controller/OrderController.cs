@@ -9,10 +9,10 @@ using System.Text;
 using Polly;
 using SharedDatabase.Dto;
 using Microsoft.AspNetCore.SignalR;
-using ApiOrder.Service.SignalIr;
 using ApiOrder.Service.Query;
 using ApiOrder.Service.ServiceCrud;
 using ApiOrder.Service.RabbitMq.Publisher;
+using ApiOrder.Service.SignalR;
 
 namespace ApiSale.Controller
 {

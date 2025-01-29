@@ -12,9 +12,7 @@ export class SaleApi extends API {
   
   private _urlpost: string = '/api/v1/sale/PaymentOK';
   private _urlget: string = '/api/v1/sale/GetAll';
-
   
-
   constructor(
     protected override http: HttpClient,    
     protected override router: Router
