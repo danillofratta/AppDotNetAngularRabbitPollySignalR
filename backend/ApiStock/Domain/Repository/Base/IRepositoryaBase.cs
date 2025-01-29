@@ -14,6 +14,10 @@ namespace Domain.Repository.Base
         Task AfterUpdate(TEntity obj);
         Task AfterDelete(TEntity obj);
 
+        Task BeforeSave(TEntity obj);
+        Task BeforeUpdate(TEntity obj);
+        Task BeforeDelete(TEntity obj);
+
         //Task<IEnumerable<TEntity>> GetAll();
         //Task<TEntity> GetById(int id);
 

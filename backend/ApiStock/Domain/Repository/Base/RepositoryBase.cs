@@ -69,8 +69,9 @@ namespace Domain.Repository.Base
         public async Task UpdateAsync(TEntity obj)
         {
             try
-            {
+            {                
                 this.ValidBeforeUpdate();
+                this.BeforeUpdate(obj);
                 _AppDbContext.Entry(obj).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
                 await _AppDbContext.SaveChangesAsync();
                 await this.AfterUpdate(obj);
@@ -80,6 +81,21 @@ namespace Domain.Repository.Base
 
                 throw e;
             }
+        }
+
+        public virtual async Task BeforeSave(TEntity obj)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public virtual async Task BeforeUpdate(TEntity obj)
+        {
+            //throw new NotImplementedException();
+        }
+
+        public virtual async Task BeforeDelete(TEntity obj)
+        {
+            //throw new NotImplementedException();
         }
 
         public virtual async Task AfterSave(TEntity obj)
