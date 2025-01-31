@@ -61,7 +61,7 @@ namespace SharedRabbitMq.Service
 
                     await Channel.QueueDeclareAsync(
                         queue: _queueName, 
-                        durable: false, 
+                        durable: true, 
                         exclusive: false, 
                         autoDelete: false, 
                         arguments: null);
@@ -85,7 +85,8 @@ namespace SharedRabbitMq.Service
         }
 
         // Método para receber mensagens da fila RabbitMQ
-        public async Task ReceiveMessages(Action<string> handleMessage)
+        //public async Task ReceiveMessages(Action<string> handleMessage)
+        public async Task ReceiveMessages(Func<string, Task> handleMessage)
         {
             // Usando EventingBasicConsumer
             var consumer = new AsyncEventingBasicConsumer(Channel);
@@ -93,12 +94,22 @@ namespace SharedRabbitMq.Service
             // Definindo o que fazer ao receber uma mensagem
             consumer.ReceivedAsync += async (model, ea) =>
             {
-                var body = ea.Body.ToArray();
-                var message = Encoding.UTF8.GetString(body);
-                Console.WriteLine($"Mensagem recebida: {message}");
-                handleMessage(message);
+                try
+                {
+                    var body = ea.Body.ToArray();
+                    var message = Encoding.UTF8.GetString(body);
+                    Console.WriteLine($"Mensagem recebida: {message} | Redelivered: {ea.Redelivered}");
 
-                await Channel.BasicAckAsync(ea.DeliveryTag, false);
+                    await handleMessage(message);
+
+                    await Channel.BasicAckAsync(ea.DeliveryTag, false);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Erro ao processar mensagem: {ex.Message}");
+                    // Se ocorrer erro, pode ser necessário rejeitar a mensagem para que volte à fila
+                    await Channel.BasicNackAsync(ea.DeliveryTag, false, true);
+                }
             };
 
             // Iniciando o consumo das mensagens

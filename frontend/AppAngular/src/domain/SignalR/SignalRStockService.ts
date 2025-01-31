@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { Observable } from 'rxjs';
+import { environment } from '../../environments/environment.development';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,8 @@ export class SignalRStockService {
 
   constructor() {
     this.hubConnection = new signalR.HubConnectionBuilder()
-      .withUrl('http://localhost:5285/notificationHub', {
+      //.withUrl('http://localhost:5285/notificationHub', {
+      .withUrl(environment.ApiUrlStockSignal, {
         withCredentials: false, // Ensure credentials are included
       })
       .withAutomaticReconnect()      

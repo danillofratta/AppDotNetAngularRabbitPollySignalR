@@ -3,34 +3,13 @@
   "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\SolutionAll\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}|..\\backend\\ApiStock\\ApiStock.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apistock\\service\\redis\\rediscacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}|..\\backend\\ApiStock\\ApiStock.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apistock\\service\\consumer\\consumerstockavailableservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BEE889D2-0B5B-49EA-B8CD-41A5C8A8BEBF}|..\\backend\\ApiStock\\ApiStock.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apistock\\domain\\stock\\stockservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A66DF452-1261-42EC-AC2F-55EE55BF24BA}|..\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\sharedrabbitmq\\service\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1054FD24-6B29-4EAF-9865-0EA8111A04D5}|..\\backend\\ApiSale\\ApiSale.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apisale\\service\\consumer\\consumerstockokservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{263DAF44-8FB6-4CD0-B979-052E94B91C3F}|..\\backend\\ApiOrder\\ApiOrder.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiorder\\service\\servicecrud\\orderservicecrud.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{263DAF44-8FB6-4CD0-B979-052E94B91C3F}|..\\backend\\ApiOrder\\ApiOrder.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiorder\\service\\rabbitmq\\publisher\\orderservicepublisher.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{263DAF44-8FB6-4CD0-B979-052E94B91C3F}|..\\backend\\ApiOrder\\ApiOrder.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiorder\\service\\rabbitmq\\consumer\\consumerpaymentokservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{263DAF44-8FB6-4CD0-B979-052E94B91C3F}|..\\backend\\ApiOrder\\ApiOrder.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiorder\\service\\rabbitmq\\consumer\\consumerstockfailedservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{263DAF44-8FB6-4CD0-B979-052E94B91C3F}|..\\backend\\ApiOrder\\ApiOrder.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiorder\\service\\rabbitmq\\consumer\\consumerstockokservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{263DAF44-8FB6-4CD0-B979-052E94B91C3F}|..\\backend\\ApiOrder\\ApiOrder.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiorder\\service\\rabbitmq\\consumer\\consumerwaitpaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1054FD24-6B29-4EAF-9865-0EA8111A04D5}|..\\backend\\ApiSale\\ApiSale.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apisale\\controller\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -40,7 +19,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -72,132 +51,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RedisCacheService.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Service\\Redis\\RedisCacheService.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiStock\\Service\\Redis\\RedisCacheService.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Service\\Redis\\RedisCacheService.cs",
-              "RelativeToolTip": "..\\backend\\ApiStock\\Service\\Redis\\RedisCacheService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "SaleController.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Controller\\SaleController.cs",
+              "RelativeDocumentMoniker": "..\\backend\\ApiSale\\Controller\\SaleController.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Controller\\SaleController.cs",
+              "RelativeToolTip": "..\\backend\\ApiSale\\Controller\\SaleController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:37:21.721Z",
+              "WhenOpened": "2025-01-31T12:56:26.538Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RabbitMqService.cs",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
+              "RelativeDocumentMoniker": "..\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
+              "RelativeToolTip": "..\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAAAIwFgAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T12:47:08.558Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ConsumerStockAvailableService.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Service\\Consumer\\ConsumerStockAvailableService.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiStock\\Service\\Consumer\\ConsumerStockAvailableService.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Service\\Consumer\\ConsumerStockAvailableService.cs",
-              "RelativeToolTip": "..\\backend\\ApiStock\\Service\\Consumer\\ConsumerStockAvailableService.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAAAgwCcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:37:08.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "StockService.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Domain\\Stock\\StockService.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiStock\\Domain\\Stock\\StockService.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiStock\\Domain\\Stock\\StockService.cs",
-              "RelativeToolTip": "..\\backend\\ApiStock\\Domain\\Stock\\StockService.cs",
-              "ViewState": "AQIAACYAAAAAAAAAAAAIwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:37:01.387Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "ConsumerStockOkService.cs",
               "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Service\\Consumer\\ConsumerStockOkService.cs",
               "RelativeDocumentMoniker": "..\\backend\\ApiSale\\Service\\Consumer\\ConsumerStockOkService.cs",
               "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Service\\Consumer\\ConsumerStockOkService.cs",
               "RelativeToolTip": "..\\backend\\ApiSale\\Service\\Consumer\\ConsumerStockOkService.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "ViewState": "AQIAACIAAAAAAAAAAAAwwCsAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:36:43.943Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "OrderServiceCrud.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\ServiceCrud\\OrderServiceCrud.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiOrder\\Service\\ServiceCrud\\OrderServiceCrud.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\ServiceCrud\\OrderServiceCrud.cs",
-              "RelativeToolTip": "..\\backend\\ApiOrder\\Service\\ServiceCrud\\OrderServiceCrud.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAA9wAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:36:33.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderServicePublisher.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Publisher\\OrderServicePublisher.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Publisher\\OrderServicePublisher.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Publisher\\OrderServicePublisher.cs",
-              "RelativeToolTip": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Publisher\\OrderServicePublisher.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:36:30.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ConsumerWaitPaymentService.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerWaitPaymentService.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerWaitPaymentService.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerWaitPaymentService.cs",
-              "RelativeToolTip": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerWaitPaymentService.cs",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:36:14.799Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ConsumerStockOkService.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerStockOkService.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerStockOkService.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerStockOkService.cs",
-              "RelativeToolTip": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerStockOkService.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:36:12.283Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ConsumerStockFailedService.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerStockFailedService.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerStockFailedService.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerStockFailedService.cs",
-              "RelativeToolTip": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerStockFailedService.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:36:09.821Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ConsumerPaymentOkService.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerPaymentOkService.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerPaymentOkService.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerPaymentOkService.cs",
-              "RelativeToolTip": "..\\backend\\ApiOrder\\Service\\RabbitMq\\Consumer\\ConsumerPaymentOkService.cs",
-              "ViewState": "AQIAACUAAAAAAAAAAAAgwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T00:36:06.412Z",
+              "WhenOpened": "2025-01-31T12:47:04.806Z",
               "EditorCaption": ""
             }
           ]

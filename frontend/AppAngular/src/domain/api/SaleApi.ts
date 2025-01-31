@@ -3,6 +3,7 @@ import { API } from './API';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { SaleDto } from '../dto/SaleDto';
+import { environment } from '../../environments/environment.development';
 
 
 @Injectable({
@@ -10,24 +11,23 @@ import { SaleDto } from '../dto/SaleDto';
 })
 export class SaleApi extends API {
   
-  private _urlpost: string = '/api/v1/sale/PaymentOK';
-  private _urlget: string = '/api/v1/sale/GetAll';
-  
+ 
   constructor(
     protected override http: HttpClient,    
     protected override router: Router
   ) {
     super(http, router);
 
-    this._baseurl = "https://localhost:7276";           
+    this._baseurl = environment.ApiUrlSale;
+    this._endpoint = "/api/v1/sale/";
   }
   
-  async GetListAll() {   
-    return this._http.get<SaleDto[]>(`${this._baseurl + this._urlget}`);
+  async GetListAll() {
+    return this._http.get<SaleDto[]>(`${this._baseurl + this._endpoint + 'GetAll'}`);
   }
 
   async Save(id: number) {
-    return this._http.post(`${this._baseurl + this._urlpost}`, id).subscribe();
+    return this._http.post(`${this._baseurl + this._endpoint + 'PaymentOK'}`, id).subscribe();
     }
 
 }

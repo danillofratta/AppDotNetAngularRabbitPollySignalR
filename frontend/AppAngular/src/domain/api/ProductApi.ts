@@ -3,14 +3,13 @@ import { API } from './API';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { ProductDto } from '../dto/ProductDto';
+import { environment } from '../../environments/environment.development';
 
 
 @Injectable({
     providedIn: 'root'
 })
 export class ProductApi extends API {
-  
-  private _endpoint: string = '/api/v1/product/';
    
   constructor(
     protected override http: HttpClient,    
@@ -18,7 +17,8 @@ export class ProductApi extends API {
   ) {
     super(http, router);
 
-    this._baseurl = "http://localhost:5285";           
+    this._baseurl = environment.ApiUrlProduct;
+    this._endpoint = '/api/v1/product/';
   }
   
   async GetListAll() {   

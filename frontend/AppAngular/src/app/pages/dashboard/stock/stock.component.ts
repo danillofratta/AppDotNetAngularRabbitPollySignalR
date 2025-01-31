@@ -83,8 +83,6 @@ export class StockComponent implements OnInit, AfterViewInit {
 
       try {
         await this.api.Save(stock);
-        //await this.loadList();
-        //this.loadDataSource();
 
         this.form.reset();
         //this.form.patchValue({ idproduct: null });
