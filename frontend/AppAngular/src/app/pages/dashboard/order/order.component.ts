@@ -7,6 +7,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 import { SignalROrderService } from '../../../../domain/SignalR/SignalROrderService ';
+import { ProductDto } from '../../../../domain/dto/ProductDto';
 
 @Component({
     selector: 'app-order',    
@@ -18,6 +19,8 @@ export class OrderComponent implements OnInit, AfterViewInit {
 
   public list$: Observable<OrderDto[]> = new Observable<OrderDto[]>();
   public record: Observable<OrderDto> = new Observable<OrderDto>();
+
+  private productDto: any;
   
   public busy = false;
   isLoading: boolean = true;
@@ -27,7 +30,6 @@ export class OrderComponent implements OnInit, AfterViewInit {
 
   dataSource = new MatTableDataSource<OrderDto>();
 
-  //displayedColumns = ['actions', 'id', 'namestatus', 'nameproduct'];
   displayedColumns = ['id', 'idproduct', 'value', 'nameproduct', 'namestatus'];  
 
   @ViewChild(MatPaginator) paginator: any = MatPaginator;
@@ -37,7 +39,8 @@ export class OrderComponent implements OnInit, AfterViewInit {
     this.form = this.fb.group({
       amount: ['', Validators.compose([
         Validators.required
-      ])]
+      ])],
+      idproduct: ['']
     });
 
   }
@@ -49,15 +52,7 @@ export class OrderComponent implements OnInit, AfterViewInit {
   async ngOnInit() {
     this.isLoading = true;
 
-    //super.ngOnInit();
-
     await this.LoadList();
-
-    //this.signalRService.startConnection().subscribe(() => {
-    //  this.signalRService.receiveMessage().subscribe((message) => {
-    //    this.receivedMessage = message;
-    //  });
-    //});
 
     this.signalRService.onGetListOrderUpdated((updatedDataList) => {
       console.log('Lista de dados recebida:', updatedDataList);
@@ -66,8 +61,7 @@ export class OrderComponent implements OnInit, AfterViewInit {
 
       console.log(orders$);
 
-
-      this.list$ = orders$; // Atualize a lista de dados na tela
+      this.list$ = orders$; 
 
       this.loadDataSource();
     });
@@ -75,14 +69,29 @@ export class OrderComponent implements OnInit, AfterViewInit {
 
   async save() {
     this.busy = true;
-    if (this.form.valid) {
-      const order: Partial<OrderDto> = { id: 0, idcustomer: 0, idproduct: 1, value: 10, createAt: new Date() };
-      order.amount = this.form.get('amount')?.value;
-      
-      await this.Api.Save(order);
 
-      this.form.controls['amount'].setValue('');
-      
+    try {
+
+
+      if (!this.productDto) return;
+
+      if (this.form.valid) {
+        const order: Partial<OrderDto> = {
+          id: 0,
+          idcustomer: 0,
+          idproduct: this.productDto.id,
+          value: 10,
+          createAt: new Date()
+        };
+        order.amount = this.form.get('amount')?.value;
+
+        await this.Api.Save(order);
+
+        this.form.reset();
+        this.productDto = null;
+        this.onProductSelected(this.productDto);        
+      }
+    } finally {
       this.busy = false;
     }
 
@@ -114,5 +123,13 @@ export class OrderComponent implements OnInit, AfterViewInit {
     )
   }
 
+  onProductSelected(record: ProductDto) {
+    this.productDto = record;
 
+    if (record) {
+      this.form.controls['idproduct'].setValue(record.id);
+    } else {
+      this.form.controls['idproduct'].reset();
+    }
+  }
 }

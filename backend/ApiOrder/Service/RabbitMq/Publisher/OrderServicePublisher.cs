@@ -20,7 +20,7 @@ namespace ApiOrder.Service.RabbitMq.Publisher
         {
             _rabbitMqService._queueName = "OrderToStock-CheckProductAvailable-Queue";
             await _rabbitMqService.InitializeService();            
-            _rabbitMqService.SendMessage(record);
+            await _rabbitMqService.SendMessage(record);
         }
     }
 }

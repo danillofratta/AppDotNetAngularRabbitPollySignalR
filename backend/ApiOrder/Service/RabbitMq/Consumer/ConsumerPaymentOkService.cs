@@ -1,4 +1,5 @@
-﻿using ApiOrder.Service.Query;
+﻿using ApiOrder.Enun;
+using ApiOrder.Service.Query;
 using ApiOrder.Service.ServiceCrud;
 using ApiOrder.Service.SignalR;
 using ApiSale.Controller;
@@ -40,30 +41,21 @@ namespace ApiOrder.Service.RabbitMq.Consumer
         {
             _rabbitMqService._queueName = "SaleToOrder-PaymentOK-Queue";
             await _rabbitMqService.InitializeService();
-            await Task.Delay(2000);
-
 
             var scope = _scopeFactory.CreateScope();
             var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
 
-            _rabbitMqService.ReceiveMessages(async (message) =>
+            await _rabbitMqService.ReceiveMessages(async (message) =>
             {
                 var order = JsonSerializer.Deserialize<Order>(message)!;
 
-                OrderStatusPaymentOk(order, dbContext);
+                await OrderStatusPaymentOk(order, dbContext);
             });
-
-            await Task.CompletedTask;
         }
         
         private async Task OrderStatusPaymentOk(Order order, DBDevContext dbContext)
         {
-            //todo create service update crud
-            _servicecrud.UpdateStatusPaymentOk(order);
-            
-            List<OrderDto> list = await this._query.GetAllOrderDto();
-
-            await _hubContext.Clients.All.SendAsync("GetListOrder", list);
+            await _servicecrud.UpdateOrderStatusAsync(order, OrderStatus.PaymentOk);            
         }
 
     }

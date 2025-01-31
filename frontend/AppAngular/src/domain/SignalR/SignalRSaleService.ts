@@ -19,10 +19,6 @@ export class SignalRSaleService {
     this.hubConnection.start()
       .then(() => console.log('SignalR Connected'))
       .catch(err => console.error('Error connecting to SignalR: ', err));
-
-    //this.hubConnection = new signalR.HubConnectionBuilder()
-    //  .withUrl('https://localhost:7091/notificationHub') // SignalR hub URL
-    //  .build();
   }
 
   onGetListSaleUpdated(callback: (dataList: any[]) => void): void {

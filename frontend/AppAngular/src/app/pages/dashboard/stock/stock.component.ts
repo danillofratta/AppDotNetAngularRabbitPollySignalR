@@ -6,6 +6,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { StockApi } from '../../../../domain/api/StockApi';
 import { ProductDto } from '../../../../domain/dto/ProductDto';
+import { SignalRStockService } from '../../../../domain/SignalR/SignalRStockService';
 
 
 @Component({
@@ -21,20 +22,19 @@ export class StockComponent implements OnInit, AfterViewInit {
   private productDto: any;
 
   dataSource = new MatTableDataSource<StockDto>();
-  /*displayedColumns = ['actions', 'id', 'name', 'price'];*/
+
   displayedColumns = ['id', 'idproduct', 'nameproduct', 'amount'];
 
   @ViewChild(MatPaginator) paginator: MatPaginator | undefined;
 
   constructor(
     private api: StockApi,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    private signalRService: SignalRStockService
   ) {
-    // Inicializando o formulário reativo
     this.form = this.fb.group({
       amount: ['', [Validators.required]],
       idproduct: ['', Validators.required],
-      //price: ['', [Validators.required, Validators.min(0)]],
     });
   }
 
@@ -48,6 +48,18 @@ export class StockComponent implements OnInit, AfterViewInit {
     this.isLoading = true;
 
     await this.loadList();
+
+    this.signalRService.onGetListStockUpdated((updatedDataList) => {
+      console.log('Lista de dados recebida:', updatedDataList);
+
+      const orders$: Observable<StockDto[]> = of(updatedDataList as StockDto[]);
+
+      console.log(orders$);
+
+      this.list$ = orders$;
+
+      this.loadDataSource();
+    });
   }
 
   new() {
@@ -71,14 +83,13 @@ export class StockComponent implements OnInit, AfterViewInit {
 
       try {
         await this.api.Save(stock);
-        await this.loadList();
+        //await this.loadList();
+        //this.loadDataSource();
 
         this.form.reset();
-        this.productDto = null;
-        this.onProductSelected(this.productDto);
-
-        this.form.markAsPristine();
-        this.form.markAsUntouched();
+        //this.form.patchValue({ idproduct: null });
+        //this.productDto = null;
+        //this.onProductSelected(null);
 
       } catch (error) {
         console.error('Erro ao salvar o stock:', error);
@@ -88,21 +99,19 @@ export class StockComponent implements OnInit, AfterViewInit {
     }
   }
 
-  /** Carrega a lista de produtos do servidor */
   async loadList() {
     this.isLoading = true;
 
     this.list$ = (await this.api.GetListAll()).pipe(
       catchError((error) => {
         console.error('Erro ao carregar lista de stock:', error);
-        return of([]); // Retorna uma lista vazia em caso de erro
+        return of([]); 
       }),
       finalize(() => {
-        this.isLoading = false; // Finaliza o estado de carregamento
+        this.isLoading = false; 
       })
     );
 
-    // Atualiza a tabela de dados
     this.list$.subscribe((stock) => {
       this.dataSource.data = stock;
     });
@@ -110,7 +119,7 @@ export class StockComponent implements OnInit, AfterViewInit {
 
   onProductSelected(record: ProductDto) {
     this.productDto = record;
-    //this.form.controls['idproduct'].setValue(record.id);
+
     if (record) {
       this.form.controls['idproduct'].setValue(record.id);
     } else {
@@ -118,35 +127,14 @@ export class StockComponent implements OnInit, AfterViewInit {
     }
   }
 
-  /** Preenche o formulário para atualização */
-  //async onUpdate(id: number) {
-  //  this.busy = true;
-
-  //  try {
-  //    const product = await (await this.api.GetById(id)).toPromise();
-  //    if (product) {
-  //      this.form.patchValue(product); // Atualiza o formulário com os dados
-  //    }
-  //  } catch (error) {
-  //    console.error('Erro ao carregar produto para atualização:', error);
-  //  } finally {
-  //    this.busy = false;
-  //  }
-  //}
-
-  /** Exclui um produto e recarrega a lista */
-  //async onDelete(id: number) {
-  //  this.isLoading = true;
-
-  //  try {
-  //    await this.api.Delete(id);
-  //    await this.loadList(); // Recarrega a lista após a exclusão
-  //  } catch (error) {
-  //    console.error('Erro ao deletar o produto:', error);
-  //  } finally {
-  //    this.isLoading = false;
-  //  }
-  //}
+  loadDataSource() {
+    this.list$.subscribe(
+      (item) => {
+        this.dataSource.data = item;
+        this.dataSource._renderChangesSubscription;
+      }
+    )
+  }
 }
 
 

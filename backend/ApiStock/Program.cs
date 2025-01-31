@@ -1,6 +1,7 @@
-using ApiStock.Domain.Repository;
+using ApiStock.Domain.Product.Repository;
 using ApiStock.Service;
 using ApiStock.Service.Redis;
+using ApiStock.Service.SignalR;
 using MediatR;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -11,24 +12,17 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-
 
 builder.Services.AddDbContext<DBDevContext>();
 
 //rabbit
 builder.Services.AddTransient<RabbitMqService>();
-//builder.Services.AddScoped(typeof(IRabbitMQPublisher<>), typeof(RabbitMQPublisher<>));
+
 builder.Services.AddHostedService<ConsumerStockAvailableService>();
 
 builder.Services.AddTransient<ProductRepository>();
 
-//var apiUrls = builder.Configuration.GetSection("ConnectionStrings").Get<Dictionary<string, string>>();
-//builder.Services.AddSingleton<IConnectionMultiplexer>(x =>
-//{    
-//    return ConnectionMultiplexer.Connect(apiUrls["redis"]);
-//});
+builder.Services.AddSignalR();
 
 #if DEBUG
 var apiUrls = builder.Configuration.GetSection("ConnectionStrings").Get<Dictionary<string, string>>();
@@ -62,10 +56,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//mediaR 
-//builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddMediatR(typeof(Program));
-
 
 var app = builder.Build();
 
@@ -94,6 +85,9 @@ app.UseEndpoints(endpoints =>
 {
     endpoints.MapControllers();
 });
+
+app.MapControllers();
+app.MapHub<NotificationHub>("/notificationHub");
 
 
 app.Run();

@@ -3,6 +3,11 @@
 <app-loading-spinner [isLoading]="isLoading" [message]="'Loading'"></app-loading-spinner>
 
 <form [formGroup]="form" *ngIf="!busy">
+  <input formControlName="idproduct" type="hidden" readonly />
+  <app-product-auto-complete placeholder="Is required"                             
+                             (productSelected)="onProductSelected($event)" />
+
+
   <mat-form-field>
     <mat-label>Amount</mat-label>
     <input matInput formControlName="amount" type="number" />

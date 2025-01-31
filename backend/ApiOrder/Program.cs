@@ -41,7 +41,6 @@ builder.WebHost.ConfigureKestrel(options =>
 #endif
 
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

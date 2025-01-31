@@ -1,4 +1,5 @@
-﻿using ApiOrder.Service.Query;
+﻿using ApiOrder.Enun;
+using ApiOrder.Service.Query;
 using ApiOrder.Service.ServiceCrud;
 using ApiOrder.Service.SignalR;
 using ApiSale.Controller;
@@ -21,20 +22,11 @@ namespace ApiOrder.Service.RabbitMq.Consumer
     public class ConsumerWaitPaymentService : BackgroundService
     {
         private readonly RabbitMqService _rabbitMqService;
-        //private readonly IServiceScopeFactory _scopeFactory;
         private readonly IHubContext<NotificationHub> _hubContext;
 
         private readonly OrderServiceQuery _query;
         private readonly OrderServiceCrud _servicecrud;
 
-        //public ConsumerWaitPaymentService(OrderServiceCrud servicecrud, OrderServiceQuery query, RabbitMqService rabbitMqService, IServiceScopeFactory scopeFactory, IHubContext<NotificationHub> hubContext)
-        //{
-        //    _servicecrud = servicecrud;
-        //    _query = query;
-        //    _rabbitMqService = rabbitMqService;
-        //    _scopeFactory = scopeFactory;
-        //    _hubContext = hubContext;
-        //}
         public ConsumerWaitPaymentService(OrderServiceCrud servicecrud, OrderServiceQuery query, RabbitMqService rabbitMqService, IHubContext<NotificationHub> hubContext)
         {
             _servicecrud = servicecrud;
@@ -48,32 +40,44 @@ namespace ApiOrder.Service.RabbitMq.Consumer
         {
             _rabbitMqService._queueName = "SaleToOrder-WaitPayment-Queue";
             await _rabbitMqService.InitializeService();
-            await Task.Delay(2000);
 
-            //var scope = _scopeFactory.CreateScope();
-            //var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
-
-            _rabbitMqService.ReceiveMessages(async (message) =>
+            await _rabbitMqService.ReceiveMessages(async (message) =>
             {
                 var order = JsonSerializer.Deserialize<Order>(message)!;
 
-                //OrderStatusWaitPayment(order, dbContext);
-                OrderStatusWaitPayment(order);
+                await OrderStatusWaitPayment(order);
             });
-
-
-            await Task.CompletedTask;
         }
 
-        //private async Task OrderStatusWaitPayment(Order order, DBDevContext dbContext)
         private async Task OrderStatusWaitPayment(Order order)
         {
-            this._servicecrud.UpdateStatusWaitPayment(order);
-            
-            List<OrderDto> list = await this._query.GetAllOrderDto();
-
-            await _hubContext.Clients.All.SendAsync("GetListOrder", list);
+            await _servicecrud.UpdateOrderStatusAsync(order, OrderStatus.WaitingPayment);
         }
+
+        // Pass CancellationToken for graceful shutdown
+        //await _rabbitMqService.ReceiveMessages(async (message, deliveryTag) =>
+        //    {
+        //    try
+        //    {
+        //        var order = JsonSerializer.Deserialize<Order>(message);
+
+        //        if (order == null)
+        //        {
+        //            Console.WriteLine("Received a null or invalid order message.");
+        //            return;
+        //        }
+
+        //        await OrderStatusWaitPayment(order);
+
+        //        // Acknowledge the message after successful processing
+        //        await _rabbitMqService.AcknowledgeMessage(deliveryTag);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine($"Error processing message: {ex.Message}");
+        //    }
+        //}, stoppingToken);
+        //}
 
     }
 

@@ -1,4 +1,5 @@
 ﻿using ApiStock.Controller;
+using ApiStock.Domain.Stock;
 using Microsoft.Extensions.Hosting;
 using Microsoft.VisualBasic;
 using Polly;
@@ -29,22 +30,20 @@ namespace ApiStock.Service
         {
             _rabbitMqService._queueName = "OrderToStock-CheckProductAvailable-Queue";
             await _rabbitMqService.InitializeService();
-            await Task.Delay(2000);
 
-            //while (!stoppingToken.IsCancellationRequested)
-            //{
-                var scope = _scopeFactory.CreateScope();
-                var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
+            var scope = _scopeFactory.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
 
-                _rabbitMqService.ReceiveMessages(async (message) =>
+            await _rabbitMqService.ReceiveMessages(async (message) =>
+            {
+                var order = JsonSerializer.Deserialize<Order>(message)!;
+
+                using (StockService service = new StockService(_rabbitMqService, dbContext))
                 {
-                    var order = JsonSerializer.Deserialize<Order>(message)!;
-                    _controller = new StockController(_rabbitMqService, dbContext);
-                    _controller.CheckAvailability(order);
-                });
-            //    await Task.Delay(1000, stoppingToken);
-            //}
-            await Task.CompletedTask;
+                    await service.CheckAvailability(order);
+                }
+            });
+
         }
     }
 

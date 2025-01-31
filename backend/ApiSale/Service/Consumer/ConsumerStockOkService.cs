@@ -22,68 +22,64 @@ namespace ApiSale.Service
         private readonly IServiceScopeFactory _scopeFactory;
         private readonly IHubContext<NotificationHub> _hubContext;
 
-
         public ConsumerStockOkService(RabbitMqService rabbitMqService, IServiceScopeFactory scopeFactory, IHubContext<NotificationHub> hubContext)
         {
             _rabbitMqService = rabbitMqService;
             _scopeFactory = scopeFactory;
             _hubContext = hubContext;
-            //_rabbitMqService.InitializeService();
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             _rabbitMqService._queueName = "StockToSale-StockOK-Queue";
             await _rabbitMqService.InitializeService();
-            await Task.Delay(2000);
            
-            //while (!stoppingToken.IsCancellationRequested)
-            //{
-                var scope = _scopeFactory.CreateScope();
-                var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
+            var scope = _scopeFactory.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<DBDevContext>();
 
-                _rabbitMqService.ReceiveMessages(async (message) =>
-                {
-                    var order = JsonSerializer.Deserialize<Order>(message)!;
+            await _rabbitMqService.ReceiveMessages(async (message) =>
+            {
+                var order = JsonSerializer.Deserialize<Order>(message)!;
 
-                    this.CreateSale(order, dbContext);
-                    this.NotifyOrder(order);
-                });
-            //    await Task.Delay(1000, stoppingToken);
-            //}
-
-            await Task.CompletedTask;
+                await this.CreateSale(order, dbContext);
+                await this.NotifyOrder(order);
+            });            
         }
 
+        //todo craete SaleServiceCrud
         private async Task CreateSale(Order order, DBDevContext dbContext)
-        {
-            Sale sale = new Sale();
-            sale.Idcustomer = order.Idcustomer;
-            sale.Idproduct = order.Idproduct;
-            sale.Idorder = order.Id;
-            sale.Idstatus = 2;
-            sale.Price = order.Price;
-            sale.Amount = order.Amount;
-            sale.CreateAt = DateTime.Now;
-            
-            await dbContext.Sale.AddAsync(sale);
-            await dbContext.SaveChangesAsync();
+        {            
+            try
+            {
+                Sale sale = new Sale();
+                sale.Idcustomer = order.Idcustomer;
+                sale.Idproduct = order.Idproduct;
+                sale.Idorder = order.Id;
+                sale.Idstatus = 2;
+                sale.Price = order.Price;
+                sale.Amount = order.Amount;
+                sale.CreateAt = DateTime.Now;
 
-            SaleController oSaleController = new SaleController(_rabbitMqService, dbContext, _hubContext);
-            List<SaleDto> list = await oSaleController.GetAllSaleDto();
+                dbContext.Sale.Add(sale);
+                dbContext.SaveChanges();
+                
+                SaleController oSaleController = new SaleController(_rabbitMqService, dbContext, _hubContext);
+                await oSaleController.GetAllSaleDto();
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
 
-            await _hubContext.Clients.All.SendAsync("GetListSale", list);
         }
 
-        //todo put in core domain service
         private async Task NotifyOrder(Order order)
         {
-            await _rabbitMqService.InitializeService();
             _rabbitMqService._queueName = "SaleToOrder-WaitPayment-Queue";
-            _rabbitMqService.SendMessage(order);
-            //_rabbitMqService.SendMessage("Stock to Order => Product quantity in stock ok");
+            await _rabbitMqService.InitializeService();
+            await _rabbitMqService.SendMessage(order);
         }
-
     }
 
 }

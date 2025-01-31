@@ -1,6 +1,4 @@
-
-
-<div class="autocomplete-wrapper">
+<!--<div class="autocomplete-wrapper">
 
   <mat-form-field>
     <mat-label>Product</mat-label>
@@ -23,4 +21,32 @@
   </div>
   <ng-template #loading></ng-template>
 
+</div>-->
+<div class="autocomplete-wrapper">
+  <!-- Autocomplete List Above the Input -->
+  <div *ngIf="list$ | async as items">
+    <ul class="autocomplete-list" *ngIf="items.length > 0">
+      <li *ngFor="let product of items; let i = index"
+          [class.active]="i === selectedIndex"
+          (click)="selectProduct(product)"
+          [attr.aria-selected]="i === selectedIndex">
+        {{ product.name }}
+      </li>
+    </ul>
+  </div>
+
+  <!-- Input Field -->
+  <mat-form-field>
+    <mat-label>Product</mat-label>
+    <input matInput type="text"
+           [(ngModel)]="searchText"
+           (input)="onSearch()"
+           [placeholder]="placeholder"
+           class="autocomplete-input" />
+  </mat-form-field>
+
+  <!-- Loading Indicator -->
+  <ng-template #loading>
+    <div class="loading-spinner">Loading...</div>
+  </ng-template>
 </div>

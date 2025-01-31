@@ -36,8 +36,6 @@ namespace SharedRabbitMq.Service
                 _hostname = "rabbitmq";
             #endif
 
-
-
             // Configura o Polly para retry e circuit breaker para RabbitMQ
             var retryPolicy = Policy.Handle<Exception>()
                 .WaitAndRetry(3, attempt => TimeSpan.FromSeconds(Math.Pow(2, attempt)));  // Retry exponencial
@@ -45,8 +43,6 @@ namespace SharedRabbitMq.Service
             var circuitBreakerPolicy = Policy.Handle<Exception>()
                 .CircuitBreaker(3, TimeSpan.FromSeconds(10)); // Abre o circuito após 3 falhas consecutivas
 
-            // Tenta conectar ao RabbitMQ
-            // Tenta conectar ao RabbitMQ (Usando async)
             await retryPolicy.Execute(async () =>
             {
                 await circuitBreakerPolicy.Execute(async () =>
@@ -73,20 +69,6 @@ namespace SharedRabbitMq.Service
             });
         }
 
-        // Método para enviar mensagens para a fila RabbitMQ
-        //public async Task SendMessage(string message)
-        //{
-        //    var body = Encoding.UTF8.GetBytes(message);
-
-        //    var props = new BasicProperties();
-        //    props.ContentType = "text/plain";
-        //    props.DeliveryMode = DeliveryModes.Persistent;
-
-        //    await Channel.BasicPublishAsync(exchange: string.Empty, routingKey: _queueName, false, basicProperties: props, body: body);
-
-        //    Console.WriteLine($"Mensagem enviada: {message}");
-        //}
-
         public async Task SendMessage<T>(T message)
         {
             //var body = Encoding.UTF8.GetBytes(message);
@@ -95,6 +77,7 @@ namespace SharedRabbitMq.Service
             var props = new BasicProperties();
             props.ContentType = "text/plain";
             props.DeliveryMode = DeliveryModes.Persistent;
+            props.Persistent = true;
 
             await Channel.BasicPublishAsync(exchange: string.Empty, routingKey: _queueName, false, basicProperties: props, body: body);
 
@@ -114,13 +97,12 @@ namespace SharedRabbitMq.Service
                 var message = Encoding.UTF8.GetString(body);
                 Console.WriteLine($"Mensagem recebida: {message}");
                 handleMessage(message);
+
+                await Channel.BasicAckAsync(ea.DeliveryTag, false);
             };
 
             // Iniciando o consumo das mensagens
-            await Channel.BasicConsumeAsync(queue: _queueName, autoAck: true, consumer: consumer);
-
-            //Console.WriteLine("Aguardando mensagens. Pressione [enter] para sair.");
-            //Console.ReadLine(); // Aguarda o usuário pressionar enter para parar o consumo.
+            await Channel.BasicConsumeAsync(queue: _queueName, autoAck: false, consumer: consumer);
         }
 
         public void Dispose()
@@ -128,10 +110,11 @@ namespace SharedRabbitMq.Service
             try
             {
                 Channel?.CloseAsync();
-                Channel?.Dispose();
+                Channel?.DisposeAsync();
                 Channel = null;
 
-
+                Connection?.CloseAsync();
+                Connection?.DisposeAsync();
             }
             catch (Exception ex)
             {

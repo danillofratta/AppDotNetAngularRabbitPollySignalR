@@ -1,6 +1,5 @@
-﻿using ApiStock.Domain.Command;
-using ApiStock.Domain.Repository;
-using Domain.Repository.Base;
+﻿using ApiStock.Domain.Product.Command;
+using ApiStock.Domain.Product.Repository;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using SharedDatabase.Models;

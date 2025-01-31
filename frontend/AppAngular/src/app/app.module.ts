@@ -30,6 +30,7 @@ import { StockComponent } from './pages/dashboard/stock/stock.component';
 import { ProductApi } from '../domain/api/ProductApi';
 import { StockApi } from '../domain/api/StockApi';
 import { ProductAutoCompleteComponent } from './components/product-auto-complete/product-auto-complete.component';
+import { SignalRStockService } from '../domain/SignalR/SignalRStockService';
 
 @NgModule({
     declarations: [
@@ -67,7 +68,7 @@ import { ProductAutoCompleteComponent } from './components/product-auto-complete
       MatCardModule  
     ],
     providers: [OrderApi, SaleApi, provideAnimationsAsync(),
-      SignalRSaleService, SignalROrderService, ProductApi, StockApi],
+      SignalRSaleService, SignalROrderService, SignalRStockService,ProductApi, StockApi],
     //,
     //{
     //  provide: APP_INITIALIZER,

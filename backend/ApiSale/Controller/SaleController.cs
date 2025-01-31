@@ -44,10 +44,6 @@ namespace ApiSale.Controller
         [HttpGet]
         public async Task<List<SaleDto>> GetAllSaleDto()
         {
-            //todo nameproduct namestatus 
-            //todo adddto
-            //todo add foreign key e add include
-            //List<SharedDatabase.Dto.OrderDto> list = _context.Order.ToList();
             var list = (from a in _context.Sale
                         join b in _context.Status on a.Idstatus equals b.Id
                         join c in _context.Product on a.Idproduct equals c.Id
@@ -66,6 +62,8 @@ namespace ApiSale.Controller
                         }).ToList<SaleDto>();
 
 
+            await _hubContext.Clients.All.SendAsync("GetListSale", list);
+
             return list;
         }
 
@@ -78,16 +76,19 @@ namespace ApiSale.Controller
 
                 Order order = await _context.Order.SingleAsync(x => x.Id == sale.Idorder);
                 if (order != null)
+                {
                     await this.NotifyOrderPaymentOk(order);
+                    await this.GetAllSaleDto();
+                }
+
+                return Ok(sale);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return NotFound("Sale not found");
-                throw;
+                return BadRequest("Pament Sale => " + ex); 
+                throw ex;
             }
            
-            
-            return Ok("ok");
         }
 
         [ApiExplorerSettings(IgnoreApi = true)]
@@ -107,9 +108,9 @@ namespace ApiSale.Controller
 
         private async Task NotifyOrderPaymentOk(Order order)
         {
-            await _rabbitMqService.InitializeService();
             _rabbitMqService._queueName = "SaleToOrder-PaymentOK-Queue";
-            _rabbitMqService.SendMessage(order);            
+            await _rabbitMqService.InitializeService();            
+            await _rabbitMqService.SendMessage(order);            
         }
     }
 }

@@ -1,62 +1,74 @@
-﻿using Microsoft.AspNetCore.SignalR;
+﻿using ApiOrder.Enun;
+using ApiOrder.Service.Query;
+using ApiOrder.Service.SignalR;
+using ApiSale.Controller;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Polly;
+using SharedDatabase.Dto;
 using SharedDatabase.Models;
+using SharedRabbitMq.Service;
 
 namespace ApiOrder.Service.ServiceCrud
 {
     public class OrderServiceCrud
     {
         private readonly DBDevContext _context;
-
-        public OrderServiceCrud(DBDevContext context)
+        private readonly ILogger<OrderController> _logger;
+        private readonly IHubContext<NotificationHub> _hubContext;
+        private readonly OrderServiceQuery _query;
+        public OrderServiceCrud(ILogger<OrderController> logger, DBDevContext context, IHubContext<NotificationHub> hubContext, OrderServiceQuery query)
         {
             _context = context;
+            _logger = logger;
+            _hubContext = hubContext;
+            _query = query;
         }
 
-        public async Task<Order> CreateOrdem(Order record)
+        public async Task<Order> CreateOrder(Order record)
         {
-            record.Idstatus = 1;
-            _context.Order.Add(record);
-            await _context.SaveChangesAsync();
+            if (record == null)
+                throw new ArgumentNullException(nameof(record));
 
-            return record;
+            try
+            {
+                record.Idstatus = (int)OrderStatus.Pending;
+                _context.Order.Add(record);
+                await _context.SaveChangesAsync();
+
+                return record;
+            }
+            catch (Exception ex)
+            { 
+                _logger.LogError(ex, "Error creating order");
+                throw new InvalidOperationException("Error creating order", ex);
+            }            
         }
 
-        public async Task<Order> UpdateStatusPaymentOk(Order order)
+        public async Task<Order> UpdateOrderStatusAsync(Order order, OrderStatus status)
         {
-            order.Idstatus = 8;
-            _context.Order.Update(order);
-            await _context.SaveChangesAsync();
+            if (order == null)
+                throw new ArgumentNullException(nameof(order));
 
-            return order;
-        }
+            try
+            {
+                Order record = await _context.Order.SingleOrDefaultAsync(x => x.Id == order.Id);
 
-        public async Task<Order> UpdateStatusOutOfStock(Order order)
-        {
-            order.Idstatus = 6;
-            _context.Order.Update(order);
-            await _context.SaveChangesAsync();
+                //order.Idstatus = (int)status;
+                record.Idstatus = (int)status;
+                _context.Entry(record).State = EntityState.Modified;
+                await _context.SaveChangesAsync();
 
-            return order;
-        }
+                List<OrderDto> list = await this._query.GetAllOrderDto();
+                await _hubContext.Clients.All.SendAsync("GetListOrder", list);
 
-        public async Task<Order> UpdateStatusStockOk(Order order)
-        {
-            order.Idstatus = 7;
-            _context.Order.Update(order);
-            await _context.SaveChangesAsync();
-
-            return order;
-        }
-
-        public async Task<Order> UpdateStatusWaitPayment(Order order)
-        {
-            order.Idstatus = 2;
-            _context.Order.Update(order);
-            await _context.SaveChangesAsync();
-
-            return order;
+                return order;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"Error updating order status to {status}");
+                throw new InvalidOperationException($"Error updating order status to {status}", ex);
+            }
         }
     }
 }

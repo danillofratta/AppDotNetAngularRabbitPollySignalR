@@ -3,12 +3,20 @@
   "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\product\\product.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\product\\product.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\components\\product-auto-complete\\product-auto-complete.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\components\\product-auto-complete\\product-auto-complete.component.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\product\\product.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\product\\product.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\components\\product-auto-complete\\product-auto-complete.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\components\\product-auto-complete\\product-auto-complete.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\order\\order.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\order\\order.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\pages\\dashboard\\order\\order.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\pages\\dashboard\\order\\order.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,8 +26,22 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 8,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "order.component.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\order\\order.component.ts",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\order\\order.component.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\order\\order.component.ts",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\order\\order.component.ts",
+              "ViewState": "AQIAABgAAAAAAAAAAAAgwCoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-30T22:41:48.501Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
@@ -51,29 +73,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "product.component.ts",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\product\\product.component.ts",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\product\\product.component.ts",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\product\\product.component.ts",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\product\\product.component.ts",
-              "ViewState": "AQIAADsAAAAAAAAAAAAswE0AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-29T05:23:03.62Z",
-              "IsPinned": true,
+              "Title": "product-auto-complete.component.css",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\components\\product-auto-complete\\product-auto-complete.component.css",
+              "RelativeDocumentMoniker": "src\\app\\components\\product-auto-complete\\product-auto-complete.component.css",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\components\\product-auto-complete\\product-auto-complete.component.css",
+              "RelativeToolTip": "src\\app\\components\\product-auto-complete\\product-auto-complete.component.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-01-30T23:45:18.388Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "product.component.html",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\product\\product.component.html",
-              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\product\\product.component.html",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\product\\product.component.html",
-              "RelativeToolTip": "src\\app\\pages\\dashboard\\product\\product.component.html",
-              "ViewState": "AQIAACYAAAAAAAAAAAAYwDMAAAAAAAAA",
+              "Title": "product-auto-complete.component.html",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\components\\product-auto-complete\\product-auto-complete.component.html",
+              "RelativeDocumentMoniker": "src\\app\\components\\product-auto-complete\\product-auto-complete.component.html",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\components\\product-auto-complete\\product-auto-complete.component.html",
+              "RelativeToolTip": "src\\app\\components\\product-auto-complete\\product-auto-complete.component.html",
+              "ViewState": "AQIAABQAAAAAAAAAAAAqwDQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-29T05:22:38.051Z",
-              "IsPinned": true
+              "WhenOpened": "2025-01-30T23:43:45.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "order.component.html",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\order\\order.component.html",
+              "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\order\\order.component.html",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\order\\order.component.html",
+              "RelativeToolTip": "src\\app\\pages\\dashboard\\order\\order.component.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-30T22:42:00.16Z",
+              "EditorCaption": ""
             }
           ]
         }

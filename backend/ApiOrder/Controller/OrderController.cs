@@ -13,12 +13,10 @@ using ApiOrder.Service.Query;
 using ApiOrder.Service.ServiceCrud;
 using ApiOrder.Service.RabbitMq.Publisher;
 using ApiOrder.Service.SignalR;
+using System.Collections.Generic;
 
 namespace ApiSale.Controller
 {
-    //process
-    //1 action => create status = create | send sale create
-    //2 action => camcel => check sale create and delete sale e cancel order
 
     [ApiController]
     [Route("api/v1/[controller]")]
@@ -27,35 +25,58 @@ namespace ApiSale.Controller
         private readonly OrderServicePublisher _publisher;
         private readonly OrderServiceCrud _servicecrud;
         private readonly OrderServiceQuery _query;
-        private readonly DBDevContext _context;
+        private readonly ILogger<OrderController> _logger;
 
         private readonly IHubContext<NotificationHub> _hubContext;
 
-        public OrderController(OrderServicePublisher publisher, OrderServiceCrud servicecrud, OrderServiceQuery query, DBDevContext context, IHubContext<NotificationHub> hubContext)
+        public OrderController(ILogger<OrderController> logger, OrderServicePublisher publisher, OrderServiceCrud servicecrud, OrderServiceQuery query, IHubContext<NotificationHub> hubContext)
         {
             _publisher = publisher; 
             _servicecrud = servicecrud;
             _query = query;
-            _context = context;
             _hubContext = hubContext;
+            _logger = logger;
         }
 
         [HttpGet("GetAll")]
         public async Task<ActionResult<List<OrderDto>>> GetAll()
         {
-            return Ok(await this._query.GetAllOrderDto());       
+            try
+            {
+                var orders = await _query.GetAllOrderDto();
+
+                await _hubContext.Clients.All.SendAsync("GetListOrder", orders);
+                return Ok(orders);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while fetching orders");
+                return StatusCode(500, "An error occurred while retrieving orders.");
+            }
+      
         }
 
         [HttpPost]
         public async Task<ActionResult<OrderDto>> CreateOrder([FromBody] Order record)
         {
-            if (record == null)
+            if (record == null) 
                 return BadRequest("Order is required");
 
-            record = await this._servicecrud.CreateOrdem(record);
-            await this._publisher.NotifyStockAvailable(record);
+            try
+            {
+                var createdOrder = await this._servicecrud.CreateOrder(record);
+                await this._publisher.NotifyStockAvailable(createdOrder);
 
-            return Ok("ok");
+                this.GetAll();
+
+                return CreatedAtAction(nameof(GetAll), new { id = createdOrder.Id }, createdOrder);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error while creating orders");
+                return StatusCode(500, "An error occurred while creating orders.");
+            }
+
         }
     }
 }
