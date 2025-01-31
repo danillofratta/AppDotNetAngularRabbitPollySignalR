@@ -30,7 +30,7 @@ namespace ApiStock.Controller
             _hubContext = hubContext;
         }
 
-        [HttpPost("addstock")]
+        [HttpPost()]
         public async Task<ActionResult> AddProductIntoStock([FromBody] StockDto dto)
         {
             try

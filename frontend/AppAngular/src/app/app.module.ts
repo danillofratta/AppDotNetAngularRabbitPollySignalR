@@ -23,14 +23,14 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-import { SignalRSaleService } from '../domain/SignalR/SignalRSaleService';
-import { SignalROrderService } from '../domain/SignalR/SignalROrderService ';
+import { SignalROrderService } from '../domain/signalr/SignalROrderService ';
 import { ProductComponent } from './pages/dashboard/product/product.component';
 import { StockComponent } from './pages/dashboard/stock/stock.component';
 import { ProductApi } from '../domain/api/ProductApi';
 import { StockApi } from '../domain/api/StockApi';
 import { ProductAutoCompleteComponent } from './components/product-auto-complete/product-auto-complete.component';
-import { SignalRStockService } from '../domain/SignalR/SignalRStockService';
+import { SignalRStockService } from '../domain/signalr/SignalRStockService';
+import { SignalRSaleService } from '../domain/signalr/SignalRSaleService';
 
 @NgModule({
     declarations: [

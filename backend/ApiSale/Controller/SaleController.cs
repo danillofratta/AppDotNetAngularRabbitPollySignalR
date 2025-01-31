@@ -1,4 +1,5 @@
-﻿using ApiOrder.Service;
+﻿using ApiSale.Service.Query;
+using ApiSale.Service.SignalR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
@@ -25,77 +26,55 @@ namespace ApiSale.Controller
         private readonly DBDevContext _context;
         public readonly RabbitMqService _rabbitMqService;
         private readonly IHubContext<NotificationHub> _hubContext;
+        private readonly SaleQueryService _query;
 
 
-        public SaleController(RabbitMqService rabbitMqService, DBDevContext context, IHubContext<NotificationHub> hubContext)
+        public SaleController(SaleQueryService query, RabbitMqService rabbitMqService, DBDevContext context, IHubContext<NotificationHub> hubContext)
         {
+            _query = query;
             _rabbitMqService = rabbitMqService;
             _context = context;
             _hubContext = hubContext;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet]
         public async Task<ActionResult<List<SaleDto>>> GetAll()
         {
-            return Ok(await this.GetAllSaleDto());
+            return Ok(await this._query.GetAllSaleDto());
         }
 
-        [ApiExplorerSettings(IgnoreApi = true)]
-        [HttpGet]
-        public async Task<List<SaleDto>> GetAllSaleDto()
-        {
-            var list = (from a in _context.Sale
-                        join b in _context.Status on a.Idstatus equals b.Id
-                        join c in _context.Product on a.Idproduct equals c.Id
-                        select new SharedDatabase.Dto.SaleDto
-                        {
-                            Id = a.Id,
-                            Idproduct = a.Idproduct,
-                            Idcustomer = a.Idcustomer,
-                            Idstatus = a.Idstatus,
-                            Idorder = a.Idorder,
-                            Price = a.Price,
-                            Amount = a.Amount,
-                            CreateAt = a.CreateAt,
-                            namestatus = b.Name,
-                            nameproduct = c.Name
-                        }).ToList<SaleDto>();
 
-
-            await _hubContext.Clients.All.SendAsync("GetListSale", list);
-
-            return list;
-        }
-
-        [HttpPost("PaymentOK")]
+        [HttpPost]
         public async Task<ActionResult<Sale>> PaymentSale([FromBody] int idsale)
         {
             try
             {
                 Sale sale =  await this.SaleStatusPayment(idsale, _context);
-
-                Order order = await _context.Order.SingleAsync(x => x.Id == sale.Idorder);
-                if (order != null)
+                if (sale != null)
                 {
-                    await this.NotifyOrderPaymentOk(order);
-                    await this.GetAllSaleDto();
+                    Order order = await _context.Order.SingleAsync(x => x.Id == sale.Idorder);
+                    if (order != null)
+                    {
+                        await this.NotifyOrderPaymentOk(order);
+                        await this._query.GetAllSaleDto();
+                    }
+
+                    return Ok(sale);
                 }
 
-                return Ok(sale);
+                return NotFound("Sale not found Sale");
             }
             catch (Exception ex)
             {
-                return BadRequest("Pament Sale => " + ex); 
+                return BadRequest("Payment Sale => " + ex); 
                 throw ex;
             }
            
         }
 
-        [ApiExplorerSettings(IgnoreApi = true)]
-        [HttpPost]
-        public async Task<Sale> SaleStatusPayment(int idsale, DBDevContext context)
+        private async Task<Sale> SaleStatusPayment(int idsale, DBDevContext context)
         {
-            Sale sale = await context.Sale.SingleAsync(x => x.Id == idsale);
+            Sale sale = await context.Sale.SingleOrDefaultAsync(x => x.Id == idsale);
             if (sale != null){
                 sale.Idstatus = 8;
                 _context.Sale.Update(sale);

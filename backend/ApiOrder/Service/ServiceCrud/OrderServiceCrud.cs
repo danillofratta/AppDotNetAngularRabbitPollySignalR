@@ -53,14 +53,16 @@ namespace ApiOrder.Service.ServiceCrud
             try
             {
                 Order record = await _context.Order.SingleOrDefaultAsync(x => x.Id == order.Id);
+                if (record != null)
+                {
+                    //order.Idstatus = (int)status;
+                    record.Idstatus = (int)status;
+                    _context.Entry(record).State = EntityState.Modified;
+                    await _context.SaveChangesAsync();
 
-                //order.Idstatus = (int)status;
-                record.Idstatus = (int)status;
-                _context.Entry(record).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-
-                List<OrderDto> list = await this._query.GetAllOrderDto();
-                await _hubContext.Clients.All.SendAsync("GetListOrder", list);
+                    List<OrderDto> list = await this._query.GetAllOrderDto();
+                    await _hubContext.Clients.All.SendAsync("GetListOrder", list);
+                }
 
                 return order;
             }

@@ -3,13 +3,16 @@
   "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\SolutionAll\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A66DF452-1261-42EC-AC2F-55EE55BF24BA}|..\\backend\\SharedRabbitMq\\SharedRabbitMq.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\sharedrabbitmq\\service\\rabbitmqservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0D2F587-46BD-4E02-B006-AD5C09E2E503}|..\\backend\\ApiOcelot\\ApiOcelot.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiocelot\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1054FD24-6B29-4EAF-9865-0EA8111A04D5}|..\\backend\\ApiSale\\ApiSale.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apisale\\service\\consumer\\consumerstockokservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0D2F587-46BD-4E02-B006-AD5C09E2E503}|..\\backend\\ApiOcelot\\ApiOcelot.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiocelot\\ocelot.prod.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1054FD24-6B29-4EAF-9865-0EA8111A04D5}|..\\backend\\ApiSale\\ApiSale.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apisale\\controller\\salecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D0D2F587-46BD-4E02-B006-AD5C09E2E503}|..\\backend\\ApiOcelot\\ApiOcelot.csproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\backend\\apiocelot\\ocelot.dev.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EDE50743-4C78-42C2-912A-930AB04380A9}|..\\frontend\\AppAngular\\AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\environments\\environment.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,8 +22,50 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 10,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "environment.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\environments\\environment.ts",
+              "RelativeDocumentMoniker": "..\\frontend\\AppAngular\\src\\environments\\environment.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\environments\\environment.ts",
+              "RelativeToolTip": "..\\frontend\\AppAngular\\src\\environments\\environment.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-31T14:36:07.242Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ocelot.prod.json",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.prod.json",
+              "RelativeDocumentMoniker": "..\\backend\\ApiOcelot\\ocelot.prod.json",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.prod.json",
+              "RelativeToolTip": "..\\backend\\ApiOcelot\\ocelot.prod.json",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAEEAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-31T14:36:34.998Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ocelot.dev.json",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.dev.json",
+              "RelativeDocumentMoniker": "..\\backend\\ApiOcelot\\ocelot.dev.json",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\ocelot.dev.json",
+              "RelativeToolTip": "..\\backend\\ApiOcelot\\ocelot.dev.json",
+              "ViewState": "AQIAADYAAAAAAAAAAAAAAAkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-31T15:42:58.395Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
@@ -51,41 +96,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "SaleController.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Controller\\SaleController.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiSale\\Controller\\SaleController.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Controller\\SaleController.cs",
-              "RelativeToolTip": "..\\backend\\ApiSale\\Controller\\SaleController.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T12:56:26.538Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "RabbitMqService.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
-              "RelativeDocumentMoniker": "..\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
-              "RelativeToolTip": "..\\backend\\SharedRabbitMq\\Service\\RabbitMqService.cs",
-              "ViewState": "AQIAAFgAAAAAAAAAAAAIwFgAAAApAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T12:47:08.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ConsumerStockOkService.cs",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Service\\Consumer\\ConsumerStockOkService.cs",
-              "RelativeDocumentMoniker": "..\\backend\\ApiSale\\Service\\Consumer\\ConsumerStockOkService.cs",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiSale\\Service\\Consumer\\ConsumerStockOkService.cs",
-              "RelativeToolTip": "..\\backend\\ApiSale\\Service\\Consumer\\ConsumerStockOkService.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAwwCsAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-31T12:47:04.806Z",
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "..\\backend\\ApiOcelot\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\backend\\ApiOcelot\\Properties\\launchSettings.json",
+              "RelativeToolTip": "..\\backend\\ApiOcelot\\Properties\\launchSettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-31T15:56:15.01Z",
               "EditorCaption": ""
             }
           ]

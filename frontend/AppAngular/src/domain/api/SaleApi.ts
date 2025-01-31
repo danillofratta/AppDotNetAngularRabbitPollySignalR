@@ -27,7 +27,7 @@ export class SaleApi extends API {
   }
 
   async Save(id: number) {
-    return this._http.post(`${this._baseurl + this._endpoint + 'PaymentOK'}`, id).subscribe();
+    return this._http.post(`${this._baseurl + this._endpoint }`, id).subscribe();
     }
 
 }

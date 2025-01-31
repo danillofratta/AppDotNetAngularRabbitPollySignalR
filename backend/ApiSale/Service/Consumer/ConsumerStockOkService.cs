@@ -1,5 +1,7 @@
-﻿using ApiOrder.Service;
+﻿
 using ApiSale.Controller;
+using ApiSale.Service.Query;
+using ApiSale.Service.SignalR;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting;
@@ -62,9 +64,9 @@ namespace ApiSale.Service
 
                 dbContext.Sale.Add(sale);
                 dbContext.SaveChanges();
-                
-                SaleController oSaleController = new SaleController(_rabbitMqService, dbContext, _hubContext);
-                await oSaleController.GetAllSaleDto();
+
+                SaleQueryService query = new SaleQueryService(dbContext, _hubContext);
+                await query.GetAllSaleDto();
             }
             catch (Exception)
             {

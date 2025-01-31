@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Service\RabbitMq\" />
-    <Folder Include="Service\SignalR\" />
   </ItemGroup>
 
 </Project>

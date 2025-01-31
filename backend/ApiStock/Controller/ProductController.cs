@@ -19,13 +19,13 @@ namespace ApiStock.Controller
         }
 
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<IActionResult> GetAll()
         {
             return Ok(await _repository.GetAll());
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        [HttpGet("getbyid/{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
             return Ok(await _repository.GetById(id));
         }

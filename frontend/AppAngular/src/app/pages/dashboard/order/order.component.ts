@@ -6,7 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DatePipe } from '@angular/common';
-import { SignalROrderService } from '../../../../domain/SignalR/SignalROrderService ';
+import { SignalROrderService } from '../../../../domain/signalr/SignalROrderService ';
 import { ProductDto } from '../../../../domain/dto/ProductDto';
 
 @Component({

@@ -38,7 +38,7 @@ namespace ApiSale.Controller
             _logger = logger;
         }
 
-        [HttpGet("GetAll")]
+        [HttpGet]
         public async Task<ActionResult<List<OrderDto>>> GetAll()
         {
             try

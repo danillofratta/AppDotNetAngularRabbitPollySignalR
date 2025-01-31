@@ -1,6 +1,7 @@
-using ApiOrder.Service;
 using ApiSale.Controller;
 using ApiSale.Service;
+using ApiSale.Service.Query;
+using ApiSale.Service.SignalR;
 using Microsoft.EntityFrameworkCore;
 using SharedDatabase.Models;
 using SharedRabbitMq.Service;
@@ -18,13 +19,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<DBDevContext>();
-
 builder.Services.AddSignalR();
+
+builder.Services.AddDbContext<DBDevContext>();
+builder.Services.AddTransient<SaleQueryService>();
+
 
 builder.Services.AddTransient<RabbitMqService>();
 //builder.Services.AddScoped(typeof(IRabbitMQPublisher<>), typeof(RabbitMQPublisher<>));
 builder.Services.AddHostedService<ConsumerStockOkService>();
+
 
 #if DEBUG
 

@@ -5,7 +5,7 @@ import { SaleDto } from '../../../../domain/dto/SaleDto';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { SignalRSaleService } from '../../../../domain/SignalR/SignalRSaleService';
+import { SignalRSaleService } from '../../../../domain/signalr/SignalRSaleService';
 
 
 @Component({
