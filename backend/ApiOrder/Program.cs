@@ -24,7 +24,10 @@ builder.Services.AddHostedService<ConsumerStockOkService>();
 builder.Services.AddHostedService<ConsumerWaitPaymentService>();
 builder.Services.AddHostedService<ConsumerPaymentOkService>();
 
-builder.Services.AddSignalR();
+builder.Services.AddSignalR(options =>
+{
+    options.EnableDetailedErrors = true;
+});
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

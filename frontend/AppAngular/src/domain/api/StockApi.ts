@@ -18,7 +18,11 @@ export class StockApi extends API {
     super(http, router);
 
     this._baseurl = environment.ApiUrlStock;
-    this._endpoint = "/api/v1/stock/";
+
+    if (!environment.production)   
+      this._endpoint = "/api/v1/stock/";
+    else
+      this._endpoint = "/stock";
   }
   
   async GetListAll() {   

@@ -1,7 +1,7 @@
 {
   "Routes": [
     {
-      "DownstreamPathTemplate": "/api/v1/order",
+      "DownstreamPathTemplate": "/api/v1/order/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -9,12 +9,41 @@
           "Port": 5001
         }
       ],
-      "UpstreamPathTemplate": "/order",
+      "UpstreamPathTemplate": "/order/{everything}",
       "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ]
     },
 
     {
-      "DownstreamPathTemplate": "/api/v1/sale",
+      "DownstreamPathTemplate": "/notificationHub/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/ordernotificationHub/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ],
+      "Priority": 1,
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "DangerousAcceptAnyServerCertificateValidator": true
+      },
+      "UpstreamHeaderTransform": {
+        "Connection": "Upgrade",
+        "Upgrade": "websocket"
+      },
+      "WebSocketsProxyConfig": {
+        "Enabled": true
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/sale/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -22,12 +51,43 @@
           "Port": 5002
         }
       ],
-      "UpstreamPathTemplate": "/sale",
+      "UpstreamPathTemplate": "/sale/{everything}",
       "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ]
     },
 
     {
-      "DownstreamPathTemplate": "/api/v1/stock",
+      "DownstreamPathTemplate": "/notificationHub/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          //"Host": "api_order", // Use o nome do serviço
+          //"Port": 80 // Use a porta interna
+          "Host": "host.docker.internal",
+          "Port": 5002
+        }
+      ],
+      "UpstreamPathTemplate": "/salenotificationHub/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ],
+      "Priority": 1,
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "DangerousAcceptAnyServerCertificateValidator": true
+      },
+      "UpstreamHeaderTransform": {
+        "Connection": "Upgrade",
+        "Upgrade": "websocket"
+      },
+      "WebSocketsProxyConfig": {
+        "Enabled": true
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/stock/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -35,14 +95,12 @@
           "Port": 5003
         }
       ],
-      "UpstreamPathTemplate": "/stock",
+      "UpstreamPathTemplate": "/stock/{everything}",
       "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ]
     },
 
-
-
     {
-      "DownstreamPathTemplate": "/api/v1/product}",
+      "DownstreamPathTemplate": "/notificationHub/{everything}",
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
@@ -50,38 +108,52 @@
           "Port": 5003
         }
       ],
-      "UpstreamPathTemplate": "/product/}",
+      "UpstreamPathTemplate": "/stocknotificationHub/{everything}",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ],
+      "Priority": 1,
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "DangerousAcceptAnyServerCertificateValidator": true
+      },
+      "UpstreamHeaderTransform": {
+        "Connection": "Upgrade",
+        "Upgrade": "websocket"
+      },
+      "WebSocketsProxyConfig": {
+        "Enabled": true
+      }
+    },
+
+    {
+      "DownstreamPathTemplate": "/api/v1/product/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "host.docker.internal",
+          "Port": 5003
+        }
+      ],
+      "UpstreamPathTemplate": "/product/{everything}",
       "UpstreamHttpMethod": [ "POST", "GET", "PUT", "DELETE" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/product/getbyid/{id}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "host.docker.internal",
-          "Port": 5003
-        }
-      ],
-      "UpstreamPathTemplate": "/product/getbyid/{id}",
-      "UpstreamHttpMethod": [  "GET" ]
-    },
-    {
-      "DownstreamPathTemplate": "/api/v1/product/getbyname/{name}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "host.docker.internal",
-          "Port": 5003
-        }
-      ],
-      "UpstreamPathTemplate": "/product/getbyname/{name}",
-      "UpstreamHttpMethod": [  "GET" ]
     }
   ],
   "GlobalConfiguration": {
     "BaseUrl": "https://localhost:4000",
+    "EnableWebSocketsProxyMode": true,
+    "UpstreamWebSocketsCloseTimeout": "00:02:00",
+    "DownstreamWebSocketsCloseTimeout": "00:02:00",
     "RateLimitOptions": {
-      "DisableRateLimitHeaders": true      
+      "DisableRateLimitHeaders": true
+    },
+    "Cors": {
+      "AllowedOrigins": [ "*" ],
+      "AllowedMethods": [ "GET", "POST", "PUT", "DELETE", "OPTIONS" ],
+      "AllowedHeaders": [ "*" ]
+      //,"AllowCredentials": true
     }
   }
 }

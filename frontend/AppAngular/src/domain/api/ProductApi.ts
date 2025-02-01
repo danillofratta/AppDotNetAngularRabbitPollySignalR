@@ -18,7 +18,11 @@ export class ProductApi extends API {
     super(http, router);
 
     this._baseurl = environment.ApiUrlProduct;
-    this._endpoint = '/api/v1/product/';
+
+    if (!environment.production)
+      this._endpoint = '/api/v1/product/';
+    else
+      this._endpoint = '/product';
   }
   
   async GetListAll() {   
@@ -26,11 +30,11 @@ export class ProductApi extends API {
   }
 
   async GetById(id: number) {   
-    return this._http.get<ProductDto[]>(`${this._baseurl + this._endpoint + 'getbyid/' + id}`);
+    return this._http.get<ProductDto[]>(`${this._baseurl + this._endpoint + '/getbyid/' + id}`);
   }
 
   async GetByName(name: string) {
-    return this._http.get<ProductDto[]>(`${this._baseurl + this._endpoint + 'getbyname/' + name}`);
+    return this._http.get<ProductDto[]>(`${this._baseurl + this._endpoint + '/getbyname/' + name}`);
   }
 
   async Save(dto: ProductDto) {
@@ -42,7 +46,7 @@ export class ProductApi extends API {
     }
 
   async Delete(id: number) {
-    return this._http.delete(`${this._baseurl + this._endpoint + id}`).subscribe();
+    return this._http.delete(`${this._baseurl + this._endpoint +'/'+ id}`).subscribe();
   }
 
 }

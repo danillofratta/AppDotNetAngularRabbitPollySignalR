@@ -14,6 +14,8 @@ export class SignalROrderService {
     //.withUrl('https://localhost:7091/notificationHub', {
       .withUrl(environment.ApiUrlOrderSignal, {
         withCredentials: false, // Ensure credentials are included
+        skipNegotiation: true,  // Importante para evitar erros de negociação
+        transport: signalR.HttpTransportType.WebSockets
       })
       .withAutomaticReconnect()      
       .build();

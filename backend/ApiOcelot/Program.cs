@@ -8,8 +8,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("CorsPolicy",
+//        builder =>
+//        {
+//            builder
+//                //.WithOrigins("http://localhost:4200") // sua URL do Angular
+//                .AllowAnyOrigin()
+//                .AllowAnyMethod()
+//                .AllowAnyHeader()
+//                .AllowCredentials(); // se necessário
+//        });
+//});
+
+
 #if DEBUG
-    builder.Configuration.AddJsonFile("ocelot.dev.json", optional: false, reloadOnChange: true);
+builder.Configuration.AddJsonFile("ocelot.dev.json", optional: false, reloadOnChange: true);
 #else
     builder.Configuration.AddJsonFile("ocelot.prod.json", optional: false, reloadOnChange: true);
 
@@ -21,11 +37,9 @@ builder.Services.AddSwaggerGen();
 
 
 builder.Services.AddOcelot();
-
 builder.Services.AddControllers();
 
 var app = builder.Build();
-
 
 
 // Configure the HTTP request pipeline.
@@ -34,6 +48,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(cors => cors
+.AllowAnyMethod()
+.AllowAnyHeader()
+.AllowAnyOrigin()
+);
+
+app.UseCors((g) => g.AllowAnyOrigin());
+app.UseCors((g) => g.AllowCredentials());
 
 app.UseHttpsRedirection();
 
@@ -44,6 +67,9 @@ app.UseEndpoints(endpoints =>
     endpoints.MapControllers();
 });
 
+app.UseWebSockets();
+
+//app.UseCors("CorsPolicy");
 await app.UseOcelot();
 
 app.Run();

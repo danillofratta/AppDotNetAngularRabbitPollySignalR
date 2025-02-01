@@ -1,12 +1,16 @@
 services:
   redis:
     image: redis:latest
+    networks:
+      - microservices-network    
     container_name: redis
     ports:
       - "6380:6379" # Redis exposto na porta 6380
 
   rabbitmq:
     image: rabbitmq:4-management
+    networks:
+      - microservices-network    
     container_name: rabbitmq
     ports:
       - "5672:5672"   # Porta de comunicação do RabbitMQ (AMQP)
@@ -17,6 +21,8 @@ services:
 
   api_order:
     image: api_order    
+    networks:
+      - microservices-network    
     ports:
       - "5001:80"
     environment:
@@ -26,6 +32,8 @@ services:
 
   api_sale:
     image: api_sale    
+    networks:
+      - microservices-network    
     ports:
       - "5002:80"  
     environment:
@@ -34,26 +42,36 @@ services:
       - rabbitmq      
 
   api_stock:
-    image: api_stock    
+    image: api_stock   
+    networks:
+      - microservices-network     
     ports:
       - "5003:80"
     environment:
       - REDIS_CONNECTION=redis:6379
       - RABBITMQ_CONNECTION=rabbitmq:5672
     depends_on:
-      - redis    
+      - redis
       - rabbitmq        
 
   app_angular:
     image: app-angular  
+    networks:
+      - microservices-network    
     ports:
       - "4200:80"
 
   gateway:
     image: api_gateway  
+    networks:
+      - microservices-network
     ports:
       - "4000:80" # Porta exposta
     depends_on:
       - api_order
       - api_sale
       - api_stock   
+
+networks:
+  microservices-network:
+    driver: bridge      

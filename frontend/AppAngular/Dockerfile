@@ -1,13 +1,82 @@
-# Etapa 1: Construir o projeto Angular
-FROM node:18 AS build
-WORKDIR /app
-COPY package*.json ./
-RUN npm install
-COPY . .
-RUN npm run build --prod
+# Estágio de build
+FROM node:18 as builder
 
-# Etapa 2: Servir o projeto Angular com NGINX
+WORKDIR /app
+
+ARG ENVIRONMENT=production
+
+# Copiar arquivos de configuração
+COPY package*.json ./
+
+# Instalar dependências
+RUN npm install
+
+# Copiar código fonte
+COPY . .
+
+# Build da aplicação
+RUN npm run build -- --configuration=${ENVIRONMENT}
+
+# Estágio de produção
 FROM nginx:alpine
-COPY --from=build /app/dist/app-angular /usr/share/nginx/html
+
+# Copiar arquivos de build para o nginx
+COPY --from=builder /app/dist/app-angular/browser /usr/share/nginx/html
+
+# Copiar configuração personalizada do nginx (opcional)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Expor porta 80
 EXPOSE 80
+
+# Iniciar nginx
 CMD ["nginx", "-g", "daemon off;"]
+
+# docker build --build-arg ENVIRONMENT=production -t app-angular .
+# docker build -t app-angular .
+# docker run -d -p 8080:80 app-angular
+
+## Desenvolvimento
+# docker-compose up angular-dev
+# # Produção
+# docker-compose up angular-prod
+
+# version: '3.8'
+# services:
+#   angular-app:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#     ports:
+#       - "8080:80"
+#     volumes:
+#       - ./src:/app/src
+
+
+# version: '3.8'
+# services:
+#   # Ambiente de desenvolvimento
+#   angular-dev:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#       args:
+#         - ENVIRONMENT=development
+#     ports:
+#       - "8080:80"
+#     volumes:
+#       - ./src:/app/src
+#     environment:
+#       - NODE_ENV=development
+
+#   # Ambiente de produção
+#   angular-prod:
+#     build:
+#       context: .
+#       dockerfile: Dockerfile
+#       args:
+#         - ENVIRONMENT=production
+#     ports:
+#       - "8081:80"
+#     environment:
+#       - NODE_ENV=production

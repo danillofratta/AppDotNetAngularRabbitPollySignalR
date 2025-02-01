@@ -14,6 +14,8 @@ export class SignalRSaleService {
       //.withUrl('https://localhost:7276/notificationHub', {
       .withUrl(environment.ApiUrlSaleSignal, {
         withCredentials: false, // Ensure credentials are included
+        skipNegotiation: true,  // Importante para evitar erros de negociação
+        transport: signalR.HttpTransportType.WebSockets
       })
       .withAutomaticReconnect()      
       .build();

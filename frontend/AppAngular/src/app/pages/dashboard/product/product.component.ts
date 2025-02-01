@@ -50,11 +50,6 @@ export class ProductComponent implements OnInit, AfterViewInit {
 
     // Carregar a lista inicial de produtos
     await this.loadList();
-
-    // Configuração do SignalR para atualizações em tempo real (descomentado caso necessário)
-    // this.signalRService.onGetListOrderUpdated((updatedDataList) => {
-    //   this.dataSource.data = updatedDataList as ProductDto[];
-    // });
   }
 
   /** Limpa o formulário para criação de um novo produto */

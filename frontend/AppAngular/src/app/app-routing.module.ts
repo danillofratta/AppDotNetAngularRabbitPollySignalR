@@ -16,13 +16,14 @@ const routes: Routes =
         { path: 'order', component: OrderComponent },
         { path: 'sale', component: SaleComponent },
         { path: 'product', component: ProductComponent },
-        { path: 'stock', component: StockComponent }      
+        { path: 'stock', component: StockComponent },
+        { path: '', redirectTo: 'dashboard', pathMatch: 'full' } // Rota padrão
       ]
     }
   ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { useHash: false })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -19,7 +19,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSignalR();
+builder.Services.AddSignalR(options =>
+{
+    options.EnableDetailedErrors = true;
+});
 
 builder.Services.AddDbContext<DBDevContext>();
 builder.Services.AddTransient<SaleQueryService>();

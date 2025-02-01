@@ -22,7 +22,10 @@ builder.Services.AddHostedService<ConsumerStockAvailableService>();
 
 builder.Services.AddTransient<ProductRepository>();
 
-builder.Services.AddSignalR();
+builder.Services.AddSignalR(options =>
+{
+    options.EnableDetailedErrors = true;
+});
 
 #if DEBUG
 var apiUrls = builder.Configuration.GetSection("ConnectionStrings").Get<Dictionary<string, string>>();

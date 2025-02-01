@@ -18,11 +18,15 @@ export class OrderApi extends API {
     super(http, router);
 
     this._baseurl = environment.ApiUrlOrder;
-    this._endpoint = "/api/v1/order/";
+
+    if (!environment.production)
+      this._endpoint = "/api/v1/order/";
+    else
+      this._endpoint = "/order";
   }
   
   async GetListAll() {
-    return this._http.get<OrderDto[]>(`${this._baseurl + this._endpoint + 'getall'}`);
+    return this._http.get<OrderDto[]>(`${this._baseurl + this._endpoint }`);
   }
 
   async Save(data: Partial<OrderDto>) {

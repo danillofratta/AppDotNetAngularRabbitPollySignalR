@@ -19,11 +19,15 @@ export class SaleApi extends API {
     super(http, router);
 
     this._baseurl = environment.ApiUrlSale;
-    this._endpoint = "/api/v1/sale/";
+
+    if (!environment.production)      
+      this._endpoint = "/api/v1/sale/";
+    else
+      this._endpoint = "/sale";
   }
   
   async GetListAll() {
-    return this._http.get<SaleDto[]>(`${this._baseurl + this._endpoint + 'GetAll'}`);
+    return this._http.get<SaleDto[]>(`${this._baseurl + this._endpoint}`);
   }
 
   async Save(id: number) {

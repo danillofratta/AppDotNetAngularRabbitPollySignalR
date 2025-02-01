@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|c:\\1 arquivos\\ti\\0 dev\\appdistribuideddotnetrabbitangular\\frontend\\appangular\\src\\environments\\environment.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{630E5C58-0F49-4038-B693-A3FCAFAA364A}|AppAngular.esproj|solutionrelative:src\\environments\\environment.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
@@ -34,7 +50,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "environment.development.ts",
               "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\environments\\environment.development.ts",
               "RelativeDocumentMoniker": "src\\environments\\environment.development.ts",
@@ -43,12 +59,11 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
               "WhenOpened": "2025-01-31T12:18:18.839Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "API.ts",
               "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\domain\\api\\API.ts",
               "RelativeDocumentMoniker": "src\\domain\\api\\API.ts",
@@ -62,14 +77,53 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "environment.ts",
-              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\environments\\environment.ts",
-              "RelativeDocumentMoniker": "src\\environments\\environment.ts",
-              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\environments\\environment.ts",
-              "RelativeToolTip": "src\\environments\\environment.ts",
+              "Title": "app-routing.module.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\app-routing.module.ts",
+              "RelativeDocumentMoniker": "src\\app\\app-routing.module.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\app-routing.module.ts",
+              "RelativeToolTip": "src\\app\\app-routing.module.ts",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-01-31T15:58:26.092Z",
+              "WhenOpened": "2025-01-31T16:23:21.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "app.module.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\app.module.ts",
+              "RelativeDocumentMoniker": "src\\app\\app.module.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\app.module.ts",
+              "RelativeToolTip": "src\\app\\app.module.ts",
+              "ViewState": "AQIAADwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-31T16:23:17.117Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "index.html",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\index.html",
+              "RelativeDocumentMoniker": "src\\index.html",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\index.html",
+              "RelativeToolTip": "src\\index.html",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-01-31T16:23:08.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "main.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\main.ts",
+              "RelativeDocumentMoniker": "src\\main.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\main.ts",
+              "RelativeToolTip": "src\\main.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-31T16:23:05.711Z",
               "EditorCaption": ""
             },
             {
@@ -102,7 +156,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "environment.ts",
+              "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\environments\\environment.ts",
+              "RelativeDocumentMoniker": "src\\environments\\environment.ts",
+              "ToolTip": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\environments\\environment.ts",
+              "RelativeToolTip": "src\\environments\\environment.ts",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-01-31T15:58:26.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "stock.component.html",
               "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.html",
               "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\stock\\stock.component.html",
@@ -110,12 +177,11 @@
               "RelativeToolTip": "src\\app\\pages\\dashboard\\stock\\stock.component.html",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-31T12:46:02.489Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-31T12:46:02.489Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 7,
               "Title": "stock.component.ts",
               "DocumentMoniker": "C:\\1 Arquivos\\TI\\0 Dev\\AppDistribuidedDotNetRabbitAngular\\frontend\\AppAngular\\src\\app\\pages\\dashboard\\stock\\stock.component.ts",
               "RelativeDocumentMoniker": "src\\app\\pages\\dashboard\\stock\\stock.component.ts",
