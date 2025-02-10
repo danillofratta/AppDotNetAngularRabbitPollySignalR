@@ -2,7 +2,8 @@
 
 Este Projeto tem o objetivo de exemplificar o uso de diversas tecnologias e padrões diferentes aplicados tanto no backend como frontend.
 
-Você também pode ver outro projeto teste publicado usando .net, blazor server, blazor wasm, angular, nextjs, e nodejs no link: https://danillofratta-001-site1.itempurl.com/index.html
+Você também pode ver outro projeto teste publicado usando .net, blazor server, blazor wasm, angular, nextjs, e nodejs no link: https://webapp.danillofrattta.targetbr.biz/0project.html
+
 
 # Tecnologias aplicadas
 
